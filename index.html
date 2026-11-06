@@ -4,115 +4,1787 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090b19">
-<title>DEEPAVALI — The Interactive Festival Playground (Ultimate Upgrade)</title>
+<title>DEEPAVALI — A Festival of Light | Creative Studio</title>
 <style>
-:root{--bg:#090b19;--panel:#12162a;--panel2:#191e35;--gold:#f5c96b;--gold2:#ffdf9a;--muted:#a8abc0;--line:rgba(255,255,255,.1);--white:#fff8e9}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer}.ambient{position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 15% 15%,rgba(94,55,142,.2),transparent 35%),radial-gradient(ellipse at 85% 70%,rgba(173,102,36,.12),transparent 35%),#090b19}.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,76px);border-bottom:1px solid var(--line);background:rgba(9,11,25,.72);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}.brand{font-family:Georgia,serif;letter-spacing:.18em;font-size:18px;color:var(--gold2)}.nav{display:flex;gap:24px}.nav button,.text-btn{border:0;background:none;color:var(--muted);font-size:13px}.nav button:hover,.nav button.active{color:var(--gold2)}.sound{border:1px solid var(--line);border-radius:30px;padding:9px 14px;background:transparent;color:var(--gold2);font-size:12px}.hero{min-height:590px;display:grid;place-items:center;text-align:center;padding:90px 20px 70px;position:relative;overflow:hidden}.hero:before,.hero:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(245,201,107,.15);border-radius:50%;top:100px;left:calc(50% - 150px);box-shadow:0 0 70px rgba(245,201,107,.08),inset 0 0 60px rgba(245,201,107,.05);animation:orbit 28s linear infinite}.hero:after{width:390px;height:390px;top:55px;left:calc(50% - 195px);animation-direction:reverse;opacity:.55}.hero-content{position:relative;z-index:2}.eyebrow{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font-size:10px}.hero h1{font:clamp(48px,9vw,100px)/.98 Georgia,serif;letter-spacing:.08em;margin:22px 0 18px;background:linear-gradient(110deg,#fff1c9,#e5ad4e,#fff5d7);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:#c4c2ce;letter-spacing:.04em;font-size:15px}.primary{border:0;border-radius:30px;padding:14px 24px;margin-top:24px;background:linear-gradient(110deg,#f1bd5c,#ffe4a2);color:#21170a;font-weight:750;letter-spacing:.06em;box-shadow:0 8px 30px rgba(245,201,107,.2);transition:.25s}.primary:hover{transform:translateY(-3px);box-shadow:0 12px 38px rgba(245,201,107,.3)}.hero-note{color:#777c98;font-size:11px;margin-top:22px}.spark{position:absolute;width:3px;height:3px;background:#ffe6a5;border-radius:50%;box-shadow:0 0 12px 3px rgba(255,216,133,.6);animation:twinkle 3s infinite alternate}@keyframes twinkle{to{opacity:.2;transform:scale(.4)}}@keyframes orbit{to{transform:rotate(360deg)}}main{max-width:1180px;margin:auto;padding:0 22px 90px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:35px 0 22px}.section-head h2{font:34px Georgia,serif;margin:0}.section-head p{color:var(--muted);font-size:13px;margin:8px 0 0}.experience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.experience{background:linear-gradient(145deg,rgba(27,31,55,.95),rgba(15,18,34,.95));border:1px solid var(--line);border-radius:18px;padding:22px;min-height:170px;text-align:left;color:var(--white);transition:.25s}.experience:hover{transform:translateY(-5px);border-color:rgba(245,201,107,.45);background:linear-gradient(145deg,#252943,#14182c)}.exp-icon{font-size:26px;color:var(--gold);display:block;margin-bottom:20px}.experience strong{display:block;font:18px Georgia,serif}.experience small{display:block;color:var(--muted);margin-top:7px;line-height:1.4}.workspace{margin-top:50px;border:1px solid var(--line);border-radius:22px;background:rgba(16,19,37,.88);overflow:hidden;min-height:490px}.workspace-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;border-bottom:1px solid var(--line)}.workspace-head h2{font:27px Georgia,serif;margin:0}.workspace-head p{margin:5px 0 0;color:var(--muted);font-size:12px}.close-btn{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:25px;padding:8px 13px}.toolrow{display:flex;flex-wrap:wrap;gap:9px;padding:14px 18px;border-bottom:1px solid var(--line);align-items:center}.toolrow button,.toolrow select,.toolrow input[type=range]{background:#202640;color:var(--white);border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:12px}.toolrow button:hover{border-color:var(--gold)}.toolrow button.selected{background:#594526;border-color:var(--gold);color:#ffe2a2}.toolrow label{color:var(--muted);font-size:11px;display:flex;align-items:center;gap:7px}.toolrow input[type=color]{width:28px;height:28px;padding:0;border:0;background:none}.stage{padding:18px;min-height:370px;display:grid;place-items:center;position:relative}.canvas-wrap{width:min(100%,720px);aspect-ratio:1.7;background:#0b1020;border:1px solid rgba(245,201,107,.16);border-radius:13px;overflow:hidden;position:relative}.canvas-wrap.square{aspect-ratio:1/1;max-width:620px}.canvas-wrap canvas{width:100%;height:100%;display:block;touch-action:none}.hint{color:var(--muted);font-size:12px;text-align:center;padding:15px}.hidden{display:none!important}.rangoli-layout{width:100%;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px;align-items:start}.sidepanel{background:#171c31;border:1px solid var(--line);border-radius:13px;padding:16px;max-height:600px;overflow-y:auto}.sidepanel h3{font:18px Georgia,serif;margin:0 0 12px}.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.swatch{width:100%;aspect-ratio:1;border:2px solid rgba(255,255,255,.25);border-radius:50%;padding:0}.sidepanel p{font-size:11px;color:var(--muted);line-height:1.6}.control-label{display:block;color:var(--muted);font-size:11px;margin:14px 0 6px}.sidepanel input[type=range]{width:100%;accent-color:var(--gold)}.my-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;width:100%}.creation{background:#1b2038;border:1px solid var(--line);border-radius:12px;padding:12px}.creation img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;background:#0b1020}.creation strong{display:block;font-size:12px;margin:9px 0 4px}.creation small{color:var(--muted);font-size:10px}.creation button{margin-top:8px;border:0;background:transparent;color:#efb8a7;font-size:11px;padding:4px;cursor:pointer}.empty{color:var(--muted);text-align:center;padding:60px 10px;font-size:13px}.footer{text-align:center;color:#777b92;font-size:11px;padding:35px 15px;border-top:1px solid var(--line)}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:#f5d18a;color:#21180b;padding:11px 18px;border-radius:30px;font-size:12px;transition:.25s;z-index:40;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:950px){.experience-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:850px){.experience-grid{grid-template-columns:repeat(2,1fr)}.rangoli-layout{grid-template-columns:1fr}.sidepanel{order:-1}.nav{gap:10px}.nav button{font-size:11px}}@media(max-width:560px){.topbar{height:60px;padding:0 14px}.brand{font-size:14px}.nav{gap:4px}.nav button{font-size:10px;padding:5px}.sound{font-size:10px;padding:7px}.hero{min-height:490px}.hero h1{font-size:49px}.section-head h2{font-size:27px}.experience-grid{gap:9px}.experience{padding:15px;min-height:150px}.experience strong{font-size:16px}.workspace-head{padding:16px}.workspace-head h2{font-size:22px}.toolrow{gap:6px;padding:10px}.toolrow button,.toolrow select{padding:7px 9px;font-size:10px}.stage{padding:10px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+:root {
+  --bg: #070914;
+  --panel: rgba(18, 22, 42, 0.86);
+  --panel2: rgba(26, 32, 58, 0.92);
+  --panel-solid: #12162a;
+  --gold: #f5c96b;
+  --gold2: #ffdf9a;
+  --amber: #e59a3c;
+  --muted: #9ea3bc;
+  --line: rgba(255, 240, 200, 0.11);
+  --line-strong: rgba(245, 201, 107, 0.35);
+  --white: #fff8eb;
+  --danger: #ef7676;
+  --success: #62bd83;
+  --radius-lg: 20px;
+  --radius-md: 13px;
+  --radius-sm: 8px;
+  --shadow: 0 16px 44px rgba(0, 0, 0, 0.48);
+}
 
-/* Upgraded Creative Styles */
-.palette-block{margin-top:14px}.palette-title{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;margin-bottom:8px}.palette-scroll{max-height:220px;overflow:auto;padding:3px}.custom-colour{width:100%;height:36px;margin-top:10px;background:#202640;border:1px solid var(--line);border-radius:9px;color:var(--muted);font-size:11px;padding:4px}.toolrow .mini-palette{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.mini-palette button{width:23px;height:23px;padding:0;border-radius:50%;border:2px solid #ffffff50}.mini-palette button.active{outline:2px solid white;outline-offset:2px}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.45;
+}
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; user-select: none; }
 
-/* Golden Hour Upgrades */
-.golden-scene{height:460px;background:linear-gradient(#ed9b62 0%,#74486b 42%,#18203d 100%);position:relative;border-radius:14px;overflow:hidden;transition:filter .4s}
-.golden-scene.night{background:linear-gradient(#080f28 0%,#171c42 65%,#291d32 100%)}
-.moon{position:absolute;right:13%;top:12%;width:55px;height:55px;border-radius:50%;background:#ffe9b3;box-shadow:0 0 35px #ffdda0;transition:opacity .5s}
-.golden-sky-star{position:absolute;color:#ffe9b3;text-shadow:0 0 12px #ffe9b3;opacity:0;transition:opacity .8s}
-.golden-scene.night .golden-sky-star{opacity:1}
-.golden-scene .houses{height:65%;z-index:2;position:absolute;bottom:0;left:0;right:0;display:flex;align-items:end;justify-content:space-evenly}
-.house{position:relative;width:15%;height:70%;background:#a95e3e;border:2px solid #e3a05c;border-radius:4px 4px 0 0;cursor:pointer;transition:filter .3s}
-.house:nth-child(2){height:88%;background:#8c4c42}.house:nth-child(3){height:76%;background:#9d6047}.house:nth-child(4){height:82%;background:#7d5c43}.house:nth-child(5){height:70%;background:#955140}
-.roof{position:absolute;left:-10%;top:-25px;width:120%;height:28px;background:#6d3440;clip-path:polygon(50% 0,100% 100%,0 100%)}
-.window{position:absolute;top:32%;left:25%;width:50%;height:28%;background:#27304a;border:2px solid #f0bd70;border-radius:3px;cursor:pointer;transition:background .3s,box-shadow .3s}
-.house.lit .window{background:#ffd879;box-shadow:0 0 28px #ffc65e}
-.house-door{position:absolute;bottom:0;left:37%;width:26%;height:32%;background:#4b2831;border:1px solid #d6a05c;border-radius:2px 2px 0 0}
-.street{position:absolute;bottom:0;left:0;right:0;height:18%;background:linear-gradient(#403044,#171a2b);z-index:3}
-.firefly{position:absolute;width:4px;height:4px;background:#fff5b6;border-radius:50%;box-shadow:0 0 8px 2px #ffdf70;pointer-events:none;z-index:5;animation:flyFloat 6s ease-in-out infinite alternate}
-@keyframes flyFloat{0%{transform:translate(0,0);opacity:.3}50%{transform:translate(15px,-25px);opacity:1}100%{transform:translate(-10px,-40px);opacity:.2}}
-.courtyard-pookalam{position:absolute;bottom:5%;left:50%;transform:translateX(-50%);width:140px;height:40px;border-radius:50%;background:radial-gradient(circle,#ff6b35,#f7c56a,#e85d5d,#ffd166);border:2px dashed #ffe3a3;z-index:4;box-shadow:0 0 15px rgba(255,164,62,.6);cursor:pointer}
-.floating-diyas{position:absolute;bottom:12%;left:5%;right:5%;display:flex;justify-content:space-around;z-index:4;pointer-events:none}
-.floating-diya-mini{width:18px;height:10px;background:#d87936;border-radius:0 0 10px 10px;position:relative;box-shadow:0 0 8px #ffaf45}
-.floating-diya-mini:before{content:"";position:absolute;top:-8px;left:7px;width:4px;height:9px;background:#ffe680;border-radius:50%;animation:.15s infinite alternate flameMini}
-@keyframes flameMini{to{transform:scaleX(.7) rotate(4deg)}}
+/* Scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(10, 12, 24, 0.6); }
+::-webkit-scrollbar-thumb { background: rgba(245, 201, 107, 0.28); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(245, 201, 107, 0.5); }
 
-/* Global Decorator */
-.global-toran{position:absolute;top:0;left:0;right:0;height:35px;pointer-events:none;z-index:15;display:flex;justify-content:space-around;background:radial-gradient(ellipse at top,rgba(255,200,80,.25),transparent 70%)}
-.toran-string{font-size:18px;letter-spacing:12px;text-align:center;width:100%;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 15% 12%, rgba(104, 58, 158, 0.22), transparent 40%),
+    radial-gradient(ellipse at 85% 75%, rgba(190, 110, 35, 0.14), transparent 42%),
+    radial-gradient(ellipse at 50% 50%, rgba(24, 30, 62, 0.4), transparent 70%),
+    #070914;
+}
 
+/* Header & Navigation */
+.topbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(18px, 4vw, 64px);
+  border-bottom: 1px solid var(--line);
+  background: rgba(7, 9, 20, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.2em;
+  font-size: 18px;
+  color: var(--gold2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+.brand::before {
+  content: "✦";
+  color: var(--gold);
+  font-size: 15px;
+  text-shadow: 0 0 12px var(--gold);
+}
+.nav { display: flex; gap: 8px; }
+.nav button, .text-btn {
+  border: 1px solid transparent;
+  background: none;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 99px;
+  transition: all 0.2s ease;
+}
+.nav button:hover, .nav button.active {
+  color: var(--gold2);
+  background: rgba(245, 201, 107, 0.08);
+  border-color: rgba(245, 201, 107, 0.2);
+}
+.sound {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--gold2);
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+.sound:hover { border-color: var(--gold); background: rgba(245, 201, 107, 0.1); }
+.sound.playing { background: rgba(245, 201, 107, 0.16); border-color: var(--gold); box-shadow: 0 0 16px rgba(245, 201, 107, 0.2); }
+
+/* Hero */
+.hero {
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 75px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero:before, .hero:after {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(245, 201, 107, 0.15);
+  border-radius: 50%;
+  top: calc(50% - 155px);
+  left: calc(50% - 155px);
+  box-shadow: 0 0 70px rgba(245, 201, 107, 0.08), inset 0 0 60px rgba(245, 201, 107, 0.05);
+  animation: orbit 32s linear infinite;
+  pointer-events: none;
+}
+.hero:after {
+  width: 420px;
+  height: 420px;
+  top: calc(50% - 210px);
+  left: calc(50% - 210px);
+  border-style: dashed;
+  animation-direction: reverse;
+  opacity: 0.45;
+}
+.hero-content { position: relative; z-index: 2; max-width: 680px; }
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+.hero h1 {
+  font: clamp(46px, 8.5vw, 92px)/0.98 Georgia, serif;
+  letter-spacing: 0.08em;
+  margin: 18px 0 16px;
+  background: linear-gradient(115deg, #fff4d2 10%, #e5ad4e 52%, #fff8e2 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 28px rgba(245, 201, 107, 0.16));
+}
+.hero p { color: #c8c6d4; letter-spacing: 0.04em; font-size: 15px; margin: 0; }
+.primary {
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 26px;
+  margin-top: 26px;
+  background: linear-gradient(110deg, #f1bd5c, #ffe4a2);
+  color: #1e1407;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.07em;
+  box-shadow: 0 8px 30px rgba(245, 201, 107, 0.22);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(245, 201, 107, 0.34); }
+.hero-note { color: #7a7f9a; font-size: 11px; margin-top: 22px; letter-spacing: 0.14em; }
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffe6a5;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 3px rgba(255, 216, 133, 0.6);
+  animation: twinkle 3s infinite alternate;
+  pointer-events: none;
+}
+@keyframes twinkle { to { opacity: 0.2; transform: scale(0.4); } }
+@keyframes orbit { to { transform: rotate(360deg); } }
+
+/* Main Container */
+main { max-width: 1380px; margin: auto; padding: 0 clamp(14px, 3vw, 32px) 90px; }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 38px 0 20px;
+  flex-wrap: wrap;
+}
+.section-head h2 { font: 32px Georgia, serif; margin: 0; color: var(--white); }
+.section-head p { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+
+/* Experience Selector Cards */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.experience {
+  background: linear-gradient(155deg, rgba(28, 33, 60, 0.9), rgba(14, 17, 34, 0.92));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 158px;
+  text-align: left;
+  color: var(--white);
+  transition: all 0.24s ease;
+  position: relative;
+  overflow: hidden;
+}
+.experience::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(245, 201, 107, 0.12), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.24s;
+  pointer-events: none;
+}
+.experience:hover, .experience.active-exp {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 24px rgba(245, 201, 107, 0.08);
+}
+.experience:hover::after, .experience.active-exp::after { opacity: 1; }
+.exp-icon {
+  font-size: 24px;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: rgba(245, 201, 107, 0.1);
+  border: 1px solid rgba(245, 201, 107, 0.2);
+  margin-bottom: 14px;
+}
+.experience strong { display: block; font: 20px Georgia, serif; color: var(--gold2); }
+.experience small { display: block; color: var(--muted); margin-top: 6px; line-height: 1.45; font-size: 12px; }
+
+/* Studio Workspace */
+.workspace {
+  margin-top: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(13, 16, 32, 0.9);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  min-height: 620px;
+}
+.workspace-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(20, 25, 48, 0.65);
+  flex-wrap: wrap;
+}
+.workspace-head h2 { font: 24px Georgia, serif; margin: 0; color: var(--gold2); }
+.workspace-head p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+.head-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+/* Buttons & Controls */
+.btn, .close-btn, .toolrow button, .toolrow select {
+  border: 1px solid var(--line);
+  background: rgba(30, 36, 64, 0.85);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.16s ease;
+}
+.btn:hover, .close-btn:hover, .toolrow button:hover, .toolrow select:hover {
+  border-color: var(--gold);
+  background: rgba(45, 53, 90, 0.95);
+}
+.btn.active, .btn.selected, .toolrow button.selected {
+  background: linear-gradient(135deg, rgba(115, 84, 34, 0.92), rgba(78, 56, 22, 0.92));
+  border-color: var(--gold);
+  color: var(--gold2);
+  box-shadow: 0 0 14px rgba(245, 201, 107, 0.18);
+}
+.btn-gold {
+  background: linear-gradient(115deg, #f2be5c, #ffe19c);
+  color: #221708;
+  border-color: #ffe5a8;
+  font-weight: 600;
+}
+.btn-gold:hover {
+  background: linear-gradient(115deg, #f7c970, #ffebb8);
+  color: #140d04;
+  box-shadow: 0 0 18px rgba(245, 201, 107, 0.35);
+}
+.btn-danger:hover { border-color: var(--danger); color: #ffb3b3; background: rgba(120, 35, 45, 0.45); }
+.btn-sm { padding: 5px 9px; font-size: 11px; border-radius: 6px; }
+
+/* Unified 3-Column Studio Layout */
+.studio-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.studio-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(17, 21, 40, 0.8);
+}
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.toolbar-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr) 300px;
+  gap: 14px;
+  padding: 14px;
+  align-items: start;
+}
+.studio-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 690px;
+  overflow-y: auto;
+}
+.panel-section {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 13px;
+}
+.panel-section:last-child { border-bottom: 0; padding-bottom: 0; }
+.panel-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0 0 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.panel-title span.sub {
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+/* Preset Grids (Brushes, Patterns, Diyas) */
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.preset-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.preset-btn {
+  border: 1px solid var(--line);
+  background: rgba(24, 30, 54, 0.75);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 8px 9px;
+  font-size: 11.5px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.15s ease;
+}
+.preset-btn:hover {
+  border-color: rgba(245, 201, 107, 0.45);
+  background: rgba(36, 44, 78, 0.9);
+}
+.preset-btn.active {
+  background: linear-gradient(135deg, rgba(110, 80, 32, 0.85), rgba(68, 48, 20, 0.9));
+  border-color: var(--gold);
+  color: var(--gold2);
+  box-shadow: inset 0 0 10px rgba(245, 201, 107, 0.15);
+}
+.preset-icon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Sliders */
+.slider-row { margin-bottom: 9px; }
+.slider-row:last-child { margin-bottom: 0; }
+.slider-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.slider-val {
+  color: var(--gold2);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 11px;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #232a48;
+  border-radius: 99px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid #fff6dc;
+  box-shadow: 0 0 8px rgba(245, 201, 107, 0.6);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid #fff6dc;
+  cursor: pointer;
+}
+
+/* Center Canvas Stage */
+.studio-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 10, 22, 0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  min-height: 580px;
+  position: relative;
+  overflow: hidden;
+}
+.canvas-viewport {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  max-height: 600px;
+  position: relative;
+}
+.canvas-wrap {
+  width: min(100%, 760px);
+  aspect-ratio: 16 / 10;
+  background: #080d1a;
+  border: 1px solid rgba(245, 201, 107, 0.22);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+  transform-origin: center center;
+  transition: transform 0.15s ease;
+}
+.canvas-wrap.square {
+  aspect-ratio: 1 / 1;
+  max-width: 580px;
+}
+.canvas-wrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+}
+.stage-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+/* Advanced Colour Picker Widget */
+.cp-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cp-top {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.cp-wheel-wrap {
+  position: relative;
+  width: 118px;
+  height: 118px;
+  display: grid;
+  place-items: center;
+}
+.cp-wheel-canvas, .cp-sv-canvas {
+  display: block;
+  cursor: crosshair;
+  touch-action: none;
+  border-radius: 8px;
+}
+.cp-wheel-canvas { border-radius: 50%; }
+.cp-sv-wrap {
+  position: relative;
+  width: 100%;
+  height: 114px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.cp-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cp-live-swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+.cp-hex-input {
+  width: 82px;
+  background: #1a203a;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px 7px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.cp-rgb-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.cp-rgb-field {
+  display: flex;
+  align-items: center;
+  background: #1a203a;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 11px;
+}
+.cp-rgb-field span { color: var(--muted); margin-right: 4px; font-weight: 600; }
+.cp-rgb-field input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  font-size: 11.5px;
+  text-align: right;
+  outline: none;
+}
+.swatches-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+}
+.swatch-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  padding: 0;
+  transition: transform 0.12s, border-color 0.12s;
+  position: relative;
+}
+.swatch-btn:hover { transform: scale(1.14); border-color: #fff; z-index: 2; }
+.swatch-btn.active { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+/* Layer Pill List */
+.layer-list { display: flex; flex-direction: column; gap: 5px; }
+.layer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: rgba(24, 30, 54, 0.7);
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+  cursor: pointer;
+}
+.layer-item.active {
+  border-color: var(--gold);
+  background: rgba(90, 66, 28, 0.45);
+  color: var(--gold2);
+}
+
+/* DiyaVerse Studio */
+.diya-stage {
+  width: 100%;
+  height: 520px;
+  border-radius: 13px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 92%, rgba(165, 92, 42, 0.55) 0%, rgba(55, 34, 52, 0.65) 42%, #070c1a 85%);
+  border: 1px solid rgba(245, 201, 107, 0.22);
+  box-shadow: inset 0 -40px 80px rgba(0, 0, 0, 0.55);
+  user-select: none;
+  touch-action: none;
+}
+.diya-water-ripples {
+  position: absolute;
+  inset: 55% 0 0 0;
+  background: repeating-radial-gradient(ellipse at 50% 80%, rgba(255, 215, 130, 0.03) 0px, transparent 18px, rgba(110, 175, 215, 0.025) 36px);
+  pointer-events: none;
+}
+.diya-ground {
+  position: absolute;
+  bottom: -55px;
+  left: -10%;
+  width: 120%;
+  height: 130px;
+  background: radial-gradient(ellipse, rgba(212, 138, 55, 0.5) 0%, rgba(125, 72, 33, 0.22) 50%, transparent 75%);
+  filter: blur(14px);
+  pointer-events: none;
+}
+.diya-count {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  color: var(--gold2);
+  font-size: 11.5px;
+  background: rgba(11, 16, 32, 0.82);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 20px;
+  z-index: 10;
+  pointer-events: none;
+}
+.diya-item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: filter 0.15s;
+}
+.diya-item:active { cursor: grabbing; }
+.diya-item svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.diya-item.selected {
+  outline: 1.5px dashed var(--gold);
+  outline-offset: 6px;
+  border-radius: 10px;
+}
+
+/* Flame Animation Classes */
+@keyframes flameClassic {
+  0% { transform: scaleX(0.94) scaleY(0.98) rotate(-1.5deg); }
+  100% { transform: scaleX(1.06) scaleY(1.04) rotate(1.5deg); }
+}
+@keyframes flameDancing {
+  0% { transform: scaleX(0.84) scaleY(1.08) skewX(-6deg) rotate(-4deg); }
+  50% { transform: scaleX(1.1) scaleY(0.92) skewX(5deg) rotate(3deg); }
+  100% { transform: scaleX(0.9) scaleY(1.06) skewX(-4deg) rotate(5deg); }
+}
+@keyframes flameSoft {
+  0% { opacity: 0.82; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1.06); }
+}
+.flame-classic { transform-origin: 50px 31px; animation: flameClassic 0.16s infinite alternate ease-in-out; }
+.flame-dancing { transform-origin: 50px 31px; animation: flameDancing 0.22s infinite alternate ease-in-out; }
+.flame-steady { transform-origin: 50px 31px; }
+.flame-soft { transform-origin: 50px 31px; animation: flameSoft 0.9s infinite alternate ease-in-out; }
+
+/* Golden Hour Scene */
+.golden-taskbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(20, 26, 50, 0.75);
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.golden-progress {
+  height: 8px;
+  background: #1d2238;
+  border-radius: 99px;
+  overflow: hidden;
+  flex: 1;
+  min-width: 120px;
+  border: 1px solid var(--line);
+}
+.golden-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #e59a3c, #ffe89e);
+  box-shadow: 0 0 12px #f5c96b;
+  transition: width 0.35s ease;
+}
+.golden-task { color: var(--gold2); }
+.golden-scene {
+  width: 100%;
+  height: 490px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(245, 201, 107, 0.22);
+  background: linear-gradient(180deg, #e89565 0%, #9b5b76 46%, #1f2748 100%);
+  transition: background 0.6s ease;
+  user-select: none;
+}
+.golden-sky-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #050b1e 0%, #151a3c 55%, #2d1d38 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.sun-orb {
+  position: absolute;
+  left: 16%;
+  top: 22%;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff6cf 0%, #ffb65c 60%, rgba(255, 120, 50, 0) 100%);
+  box-shadow: 0 0 50px rgba(255, 180, 85, 0.7);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+.moon {
+  position: absolute;
+  right: 14%;
+  top: 12%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fffdf2, #ffe5a3 70%, #e0b868);
+  box-shadow: 0 0 42px 8px rgba(255, 224, 155, 0.45);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+.golden-sky-star {
+  position: absolute;
+  color: #fff0c2;
+  text-shadow: 0 0 10px #ffe9b3;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  animation: twinkle 2.4s infinite alternate;
+}
+.golden-scene.night .golden-sky-star { opacity: 0.95; }
+
+/* Distant Skyline Silhouette */
+.distant-skyline {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  height: 140px;
+  opacity: 0.35;
+  pointer-events: none;
+  background:
+    linear-gradient(transparent 40%, #0d1024 40%) 5% 100% / 8% 90px no-repeat,
+    radial-gradient(circle at 50% 100%, #0d1024 48%, transparent 50%) 18% 100% / 12% 70px no-repeat,
+    linear-gradient(transparent 20%, #0d1024 20%) 35% 100% / 10% 110px no-repeat,
+    radial-gradient(circle at 50% 100%, #0d1024 48%, transparent 50%) 68% 100% / 14% 85px no-repeat,
+    linear-gradient(transparent 30%, #0d1024 30%) 88% 100% / 9% 95px no-repeat;
+}
+
+.houses {
+  position: absolute;
+  bottom: 20%;
+  left: 2%;
+  right: 2%;
+  height: 58%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  z-index: 3;
+}
+.house {
+  position: relative;
+  width: 14.5%;
+  height: 70%;
+  background: linear-gradient(180deg, #9f563a, #6c3628);
+  border: 2px solid #df9d58;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  transition: transform 0.22s ease, filter 0.25s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+.house:nth-child(2) { height: 88%; background: linear-gradient(180deg, #86453f, #582a29); }
+.house:nth-child(3) { height: 76%; background: linear-gradient(180deg, #9a5d42, #633928); }
+.house:nth-child(4) { height: 92%; background: linear-gradient(180deg, #7c4758, #4d2938); }
+.house:nth-child(5) { height: 74%; background: linear-gradient(180deg, #9c583c, #693725); }
+.house:nth-child(6) { height: 82%; background: linear-gradient(180deg, #884c3d, #562c24); }
+.house:hover { filter: brightness(1.12); transform: translateY(-2px); }
+.house.lit {
+  box-shadow: 0 0 38px rgba(255, 198, 94, 0.28), 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+.roof {
+  position: absolute;
+  left: -9%;
+  top: -24px;
+  width: 118%;
+  height: 26px;
+  background: linear-gradient(180deg, #7c3b49, #4e222d);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  border-bottom: 2px solid #f2b96e;
+}
+.house-garland {
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  top: 2px;
+  height: 12px;
+  background: radial-gradient(circle, #ff9924 35%, #ffd24c 55%, transparent 65%) 0 0 / 14px 12px repeat-x;
+  opacity: 0.45;
+  transition: opacity 0.3s, filter 0.3s;
+  pointer-events: none;
+}
+.house.lit .house-garland, .house.garland-on .house-garland {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #ffae34);
+}
+.house-balcony {
+  position: absolute;
+  top: 24%;
+  left: 12%;
+  right: 12%;
+  height: 10px;
+  border-bottom: 2px solid #e7aa62;
+  background: repeating-linear-gradient(90deg, rgba(231, 170, 98, 0.55) 0 3px, transparent 3px 8px);
+}
+.window-row {
+  position: absolute;
+  top: 36%;
+  left: 14%;
+  right: 14%;
+  height: 25%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.window {
+  flex: 1;
+  height: 100%;
+  background: #222942;
+  border: 2px solid #eab56c;
+  border-radius: 10px 10px 2px 2px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.house.lit .window {
+  background: radial-gradient(circle, #fff5c0 0%, #ffd269 65%, #f09c35 100%);
+  box-shadow: 0 0 22px 5px rgba(255, 198, 94, 0.72);
+}
+.house-door {
+  position: absolute;
+  bottom: 0;
+  left: 35%;
+  width: 30%;
+  height: 32%;
+  background: linear-gradient(180deg, #522933, #33171f);
+  border: 1.5px solid #dfa35c;
+  border-radius: 12px 12px 0 0;
+}
+.house.lit .house-door {
+  box-shadow: inset 0 0 12px rgba(255, 200, 100, 0.35);
+}
+.door-knob {
+  position: absolute;
+  bottom: 42%;
+  right: 18%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f8d58c;
+}
+.street {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background: linear-gradient(180deg, #35273b 0%, #1c1829 45%, #0e101d 100%);
+  border-top: 2px solid rgba(245, 201, 107, 0.25);
+  z-index: 2;
+}
+.courtyard-glow {
+  position: absolute;
+  bottom: 2%;
+  left: 10%;
+  right: 10%;
+  height: 16%;
+  background: radial-gradient(ellipse at center, rgba(255, 185, 75, 0.18), transparent 75%);
+  pointer-events: none;
+  z-index: 2;
+}
+.golden-decor {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(255, 205, 95, 0.85));
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: popIn 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.golden-decor:hover { transform: scale(1.22); }
+@keyframes popIn {
+  from { transform: scale(0.2); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes floatFirefly {
+  0% { transform: translate(0, 0) scale(0.9); opacity: 0.45; }
+  50% { transform: translate(14px, -18px) scale(1.25); opacity: 1; }
+  100% { transform: translate(-10px, -6px) scale(0.95); opacity: 0.65; }
+}
+.firefly-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffe875;
+  box-shadow: 0 0 12px 4px rgba(255, 224, 95, 0.85);
+  pointer-events: none;
+  z-index: 6;
+  animation: floatFirefly 3.6s infinite alternate ease-in-out;
+}
+@keyframes burstSpark {
+  0% { transform: translate(-50%, -50%) scale(0.4); opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0); opacity: 0; }
+}
+.spark-burst {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffdf80;
+  box-shadow: 0 0 10px #ffae34;
+  pointer-events: none;
+  z-index: 15;
+  animation: burstSpark 0.65s ease-out forwards;
+}
+
+.golden-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 18px;
+  border-top: 1px solid var(--line);
+  background: rgba(17, 21, 40, 0.75);
+  justify-content: center;
+}
+
+/* Gallery / My Creations */
+.gallery-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.gallery-search {
+  background: rgba(24, 30, 54, 0.85);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 12px;
+  color: var(--white);
+  font-size: 12px;
+  min-width: 200px;
+}
+.my-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+.creation {
+  background: linear-gradient(160deg, rgba(28, 34, 62, 0.9), rgba(16, 20, 38, 0.95));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.creation:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42);
+}
+.creation-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 9px;
+  overflow: hidden;
+  background: #080c18;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.creation img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.creation-img-wrap:hover img { transform: scale(1.04); }
+.creation-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(9, 12, 26, 0.82);
+  border: 1px solid var(--line);
+  color: var(--gold2);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  backdrop-filter: blur(6px);
+}
+.creation-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px 0 8px;
+  gap: 8px;
+}
+.creation strong {
+  font-size: 13.5px;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.creation small { color: var(--muted); font-size: 11px; flex-shrink: 0; }
+.creation-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.creation-actions button {
+  border: 1px solid var(--line);
+  background: rgba(30, 36, 64, 0.65);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 5px 4px;
+  font-size: 11px;
+  transition: all 0.15s;
+}
+.creation-actions button:hover {
+  color: var(--gold2);
+  border-color: var(--gold);
+  background: rgba(50, 60, 100, 0.7);
+}
+.creation-actions button.del-btn:hover {
+  color: #ffb3b3;
+  border-color: var(--danger);
+  background: rgba(120, 35, 45, 0.45);
+}
+
+/* Lightbox Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 16, 0.86);
+  backdrop-filter: blur(14px);
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.modal-card {
+  background: #13182e;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  max-width: 860px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+}
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.modal-head h3 { margin: 0; font: 20px Georgia, serif; color: var(--gold2); }
+.modal-body {
+  padding: 18px;
+  display: grid;
+  place-items: center;
+  background: #080b18;
+  max-height: 72vh;
+  overflow: auto;
+}
+.modal-body img {
+  max-width: 100%;
+  max-height: 65vh;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.modal-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-top: 1px solid var(--line);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.empty { color: var(--muted); text-align: center; padding: 65px 15px; font-size: 13.5px; grid-column: 1 / -1; }
+.hint { color: var(--muted); font-size: 12px; text-align: center; padding: 12px 16px; }
+.hidden { display: none !important; }
+.footer {
+  text-align: center;
+  color: #777b92;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  padding: 35px 15px;
+  border-top: 1px solid var(--line);
+}
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  background: linear-gradient(120deg, #f5cf82, #ffe6ae);
+  color: #1e1508;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 12.5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: 0.25s;
+  z-index: 120;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* Responsive Breakpoints */
+@media (max-width: 1120px) {
+  .studio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .studio-stage {
+    grid-column: 1 / -1;
+    order: -1;
+    min-height: 480px;
+  }
+  .studio-panel { max-height: none; }
+}
+@media (max-width: 850px) {
+  .experience-grid { grid-template-columns: repeat(2, 1fr); }
+  .studio-grid { grid-template-columns: 1fr; }
+  .nav { gap: 4px; }
+  .nav button { font-size: 11.5px; padding: 6px 10px; }
+}
+@media (max-width: 560px) {
+  .topbar { height: 60px; padding: 0 12px; }
+  .brand { font-size: 14px; letter-spacing: 0.12em; }
+  .nav button { font-size: 10.5px; padding: 5px 7px; }
+  .sound { font-size: 10.5px; padding: 6px 10px; }
+  .hero { min-height: 440px; padding: 55px 14px 45px; }
+  .experience-grid { gap: 9px; }
+  .experience { padding: 15px; min-height: 140px; }
+  .experience strong { font-size: 17px; }
+  .workspace-head { padding: 14px; }
+  .workspace-head h2 { font-size: 20px; }
+  .diya-stage, .golden-scene { height: 360px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
 </style>
 </head>
 <body>
 <div class="ambient"></div>
-<!-- Global Toran Decorator -->
-<div class="global-toran" id="globalToran" style="display:none;"><div class="toran-string">🌼🥭🪔🥭🌼🥭🪔🥭🌼🥭🪔🥭🌼🥭🪔🥭🌼</div></div>
 
 <header class="topbar">
   <div class="brand">DEEPAVALI</div>
   <nav class="nav" aria-label="Main navigation">
-    <button class="active" data-scroll="home">Home</button><button data-scroll="experiences">Experiences</button><button data-scroll="workspace">Playground</button><button data-scroll="creations">Creations</button>
+    <button class="active" data-scroll="home">Home</button>
+    <button data-scroll="experiences">Experiences</button>
+    <button data-scroll="workspace">Playground</button>
+    <button data-scroll="creations">Creations</button>
   </nav>
   <button class="sound" id="soundBtn">♫ Sound: Off</button>
 </header>
 
 <section class="hero" id="home">
-  <span class="spark" style="top:22%;left:18%"></span><span class="spark" style="top:31%;right:17%;animation-delay:1s"></span><span class="spark" style="bottom:22%;left:27%;animation-delay:2s"></span><span class="spark" style="bottom:27%;right:24%;animation-delay:.5s"></span>
+  <span class="spark" style="top:22%;left:18%"></span>
+  <span class="spark" style="top:31%;right:17%;animation-delay:1s"></span>
+  <span class="spark" style="bottom:22%;left:27%;animation-delay:2s"></span>
+  <span class="spark" style="bottom:27%;right:24%;animation-delay:.5s"></span>
   <div class="hero-content">
-    <div class="eyebrow">An interactive festival experience</div>
+    <div class="eyebrow">An interactive festival creative studio</div>
     <h1>DEEPAVALI</h1>
-    <p>A Festival of Light. A World of Creativity.</p>
-    <button class="primary" id="exploreBtn">ENTER THE PLAYGROUND&nbsp; ↗</button>
-    <div class="hero-note">CREATE · EXPLORE · CELEBRATE</div>
+    <p>A Festival of Light. A World of Digital Craft &amp; Creativity.</p>
+    <button class="primary" id="exploreBtn">ENTER THE PLAYGROUND &nbsp;↗</button>
+    <div class="hero-note">RANGOLI STUDIO · DIYAVERSE · LIGHT PAINTING · GOLDEN HOUR</div>
   </div>
 </section>
 
 <main>
   <section id="experiences">
     <div class="section-head">
-      <div><h2>Explore the experiences</h2><p>Five immersive festival worlds. Endless ways to celebrate.</p></div>
-      <div><label style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;"><input type="checkbox" id="toranToggle"> Hang Toran Decor</label></div>
+      <div>
+        <h2>Explore the experiences</h2>
+        <p>Four interactive studios. Craft symmetrical mandalas, lightscapes, luminous trails, and festive streets.</p>
+      </div>
     </div>
     <div class="experience-grid">
-      <button class="experience" data-open="rangoli"><span class="exp-icon">✳</span><strong>Rangoli Studio</strong><small>Advanced sand textures, motifs, stamps & palettes.</small></button>
-      <button class="experience" data-open="diya"><span class="exp-icon">♨</span><strong>DiyaVerse</strong><small>Handcrafted terracotta, brass & lotus diyas with audio ambiance.</small></button>
-      <button class="experience" data-open="painting"><span class="exp-icon">✧</span><strong>Light Painting</strong><small>Glowing trails, text writer & animation recording.</small></button>
-      <button class="experience" data-open="golden"><span class="exp-icon">☾</span><strong>Golden Hour</strong><small>Pookalam courtyard, mela stall decorator & living neighbourhood.</small></button>
-      <button class="experience" data-open="fireworks"><span class="exp-icon">🎆</span><strong>Firework Playground</strong><small>Interactive sparkler cursor & celestial night sky show.</small></button>
+      <button class="experience" data-open="rangoli">
+        <span class="exp-icon">✳</span>
+        <strong>Rangoli Studio</strong>
+        <small>12 brushes, HSV colour wheel, 16-fold symmetry, and traditional stamps.</small>
+      </button>
+      <button class="experience" data-open="diya">
+        <span class="exp-icon">♨</span>
+        <strong>DiyaVerse</strong>
+        <small>Customise handcrafted diyas, flames, garlands, and sacred arrangements.</small>
+      </button>
+      <button class="experience" data-open="painting">
+        <span class="exp-icon">✧</span>
+        <strong>Light Painting</strong>
+        <small>10 particle &amp; ribbon light brushes with multi-layer luminous blending.</small>
+      </button>
+      <button class="experience" data-open="golden">
+        <span class="exp-icon">☾</span>
+        <strong>Golden Hour</strong>
+        <small>Bring a Diwali neighbourhood to life with lanterns, torans, and missions.</small>
+      </button>
     </div>
   </section>
 
   <section class="workspace" id="workspace">
     <div class="workspace-head">
-      <div><h2 id="workspaceTitle">Choose your experience</h2><p id="workspaceDesc">Select a playground above to begin creating.</p></div>
-      <button class="close-btn" id="resetView">Reset view</button>
+      <div>
+        <h2 id="workspaceTitle">Choose your experience</h2>
+        <p id="workspaceDesc">Select a creative studio above to begin crafting.</p>
+      </div>
+      <div class="head-actions">
+        <button class="close-btn" id="resetView">Reset view</button>
+      </div>
     </div>
-    <div id="workspaceBody"><div class="empty">Your creative space is waiting. Choose an experience to begin.</div></div>
+    <div id="workspaceBody">
+      <div class="empty">Your creative studio is ready. Select Rangoli Studio, DiyaVerse, Light Painting, or Golden Hour above.</div>
+    </div>
   </section>
 
   <section id="creations">
     <div class="section-head">
-      <div><h2>My Creations</h2><p>Your saved artwork, kept securely on this device.</p></div>
-      <button class="close-btn" id="clearAll">Clear gallery</button>
+      <div>
+        <h2>My Creations</h2>
+        <p>Your saved artwork gallery, stored locally on this device.</p>
+      </div>
+      <div class="gallery-controls">
+        <input type="search" id="gallerySearch" class="gallery-search" placeholder="Search creations..." aria-label="Search creations">
+        <select id="galleryFilter" class="btn" aria-label="Filter creations by studio">
+          <option value="all">All Studios</option>
+          <option value="Rangoli">Rangoli Studio</option>
+          <option value="DiyaVerse">DiyaVerse</option>
+          <option value="Light">Light Painting</option>
+          <option value="Golden">Golden Hour</option>
+        </select>
+        <button class="close-btn btn-danger" id="clearAll">Clear gallery</button>
+      </div>
     </div>
-    <div class="my-gallery" id="gallery"><div class="empty">Nothing saved yet. Make something wonderful.</div></div>
+    <div class="my-gallery" id="gallery">
+      <div class="empty">Nothing saved yet. Make something wonderful.</div>
+    </div>
   </section>
 </main>
+
+<!-- Full-Size Artwork Preview Modal -->
+<div class="modal-backdrop hidden" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="modalTitle">Artwork Preview</h3>
+      <button class="btn btn-sm" id="modalClose">✕ Close</button>
+    </div>
+    <div class="modal-body">
+      <img id="modalImg" src="" alt="Full-size saved creation">
+    </div>
+    <div class="modal-foot">
+      <span id="modalMeta" style="font-size:12px;color:var(--muted)"></span>
+      <div style="display:flex;gap:8px">
+        <button class="btn" id="modalRename">✎ Rename</button>
+        <button class="btn btn-gold" id="modalDownload">↓ Download PNG</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">DEEPAVALI · A FESTIVAL OF LIGHT, A WORLD OF CREATIVITY</footer>
 <div class="toast" id="toast"></div>
 
 <script>
-const $ = s => document.querySelector(s), body = $('#workspaceBody');
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const body = $('#workspaceBody');
+
 let current = '';
 let soundOn = false;
 let audioCtx = null;
+let ambientNodes = [];
 let brushColor = '#f5c96b';
+let activeCleanup = null;
 
+/* ==========================================
+   CURATED PALETTES & SHARED COLOUR STATE
+   ========================================== */
+const CURATED_PALETTES = {
+  'Traditional Indian': ['#e63946', '#f77f00', '#fcbf49', '#eae2b7', '#2a9d8f', '#9b2226', '#ae2012', '#ff9f1c'],
+  'Royal Gold': ['#fff3b0', '#f5c96b', '#e09f3e', '#b57c1e', '#7f4f24', '#d4af37', '#ffd700', '#4a2c11'],
+  'Vibrant Festival': ['#ff007f', '#ff5e00', '#ffbe0b', '#8338ec', '#3a86ff', '#06d6a0', '#fb5607', '#ff6ec7'],
+  'Pastel Dreams': ['#ffd6e0', '#ffef9f', '#c1fba4', '#7bf1a8', '#90f1ef', '#cdb4db', '#ffc8dd', '#bde0fe'],
+  'Floral Garden': ['#ff4d6d', '#ff8fa3', '#ffb3c1', '#f7b801', '#52b788', '#2d6a4f', '#d8f3dc', '#9d4edd'],
+  'Neon Glow': ['#00f5d4', '#00bbf9', '#fee440', '#f15bb5', '#9b5de5', '#39ff14', '#ff073a', '#ff6eff'],
+  'Earthy Tones': ['#cb997e', '#ddbea9', '#ffe8d6', '#b7b7a4', '#a5a58d', '#6b705c', '#9c6644', '#7f5539'],
+  'Midnight Celebration': ['#f5c96b', '#c77dff', '#7209b7', '#4cc9f0', '#4361ee', '#f72585', '#ffd166', '#118ab2']
+};
+
+const STORAGE_KEYS = {
+  creations: 'deepavali-creations',
+  favColors: 'deepavali-fav-colors',
+  recentColors: 'deepavali-recent-colors',
+  customPalettes: 'deepavali-custom-palettes'
+};
+
+function loadJSON(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch (e) {
+    return fallback;
+  }
+}
+function saveJSON(key, val) {
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
+}
+
+let recentColors = loadJSON(STORAGE_KEYS.recentColors, ['#f5c96b', '#ff4f81', '#40c4ff', '#62bd83', '#b58af2', '#ff7a59', '#fff0a6', '#ffffff']);
+let favColors = loadJSON(STORAGE_KEYS.favColors, ['#f5c96b', '#e63946', '#00f5d4', '#9b5de5', '#ffbe0b', '#ffffff']);
+let customPalettes = loadJSON(STORAGE_KEYS.customPalettes, {});
+
+function pushRecentColor(hex) {
+  hex = normalizeHex(hex);
+  recentColors = [hex, ...recentColors.filter(c => c.toLowerCase() !== hex.toLowerCase())].slice(0, 8);
+  saveJSON(STORAGE_KEYS.recentColors, recentColors);
+}
+
+/* ==========================================
+   COLOUR CONVERSION UTILITIES
+   ========================================== */
+function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+function normalizeHex(hex) {
+  let s = String(hex || '').trim().replace(/^#/, '');
+  if (s.length === 3) s = s[0]+s[0]+s[1]+s[1]+s[2]+s[2];
+  if (!/^[0-9a-fA-F]{6}$/.test(s)) return '#f5c96b';
+  return '#' + s.toLowerCase();
+}
+
+function hexToRgb(hex) {
+  const h = normalizeHex(hex).slice(1);
+  return {
+    r: parseInt(h.slice(0, 2), 16),
+    g: parseInt(h.slice(2, 4), 16),
+    b: parseInt(h.slice(4, 6), 16)
+  };
+}
+
+function rgbToHex(r, g, b) {
+  const toH = n => clamp(Math.round(n), 0, 255).toString(16).padStart(2, '0');
+  return '#' + toH(r) + toH(g) + toH(b);
+}
+
+function rgbToHsv(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  const d = max - min;
+  let h = 0;
+  const s = max === 0 ? 0 : d / max;
+  const v = max;
+  if (max !== min) {
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return { h: h * 360, s, v };
+}
+
+function hsvToRgb(h, s, v) {
+  h = ((h % 360) + 360) % 360;
+  const c = v * s;
+  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+  const m = v - c;
+  let r1 = 0, g1 = 0, b1 = 0;
+  if (h < 60) { r1 = c; g1 = x; }
+  else if (h < 120) { r1 = x; g1 = c; }
+  else if (h < 180) { g1 = c; b1 = x; }
+  else if (h < 240) { g1 = x; b1 = c; }
+  else if (h < 300) { r1 = x; b1 = c; }
+  else { r1 = c; b1 = x; }
+  return {
+    r: Math.round((r1 + m) * 255),
+    g: Math.round((g1 + m) * 255),
+    b: Math.round((b1 + m) * 255)
+  };
+}
+
+function hexWithAlpha(hex, alpha) {
+  const { r, g, b } = hexToRgb(hex);
+  return `rgba(${r}, ${g}, ${b}, ${clamp(alpha, 0, 1)})`;
+}
+
+/* ==========================================
+   UNIFIED ADVANCED COLOUR PICKER COMPONENT
+   ========================================== */
+function mountColorPicker(container, initialHex, onChange) {
+  let rgb = hexToRgb(initialHex || brushColor);
+  let hsv = rgbToHsv(rgb.r, rgb.g, rgb.b);
+  let currentPaletteName = 'Traditional Indian';
+
+  container.innerHTML = `
+    <div class="cp-widget">
+      <div class="cp-top">
+        <div class="cp-wheel-wrap">
+          <canvas class="cp-wheel-canvas" width="118" height="118" title="Drag around wheel to select Hue"></canvas>
+        </div>
+        <div class="cp-sv-wrap">
+          <canvas class="cp-sv-canvas" width="142" height="114" title="Drag to select Saturation & Brightness"></canvas>
+        </div>
+      </div>
+
+      <div class="cp-preview-row">
+        <div class="cp-live-swatch" title="Live colour preview"></div>
+        <input type="text" class="cp-hex-input" maxlength="7" aria-label="HEX colour input" value="${normalizeHex(initialHex)}">
+        <button type="button" class="btn btn-sm cp-add-fav" title="Save to Favourite Colours">★ Save</button>
+      </div>
+
+      <div class="cp-rgb-row">
+        <label class="cp-rgb-field"><span>R</span><input type="number" min="0" max="255" class="cp-r" value="${rgb.r}"></label>
+        <label class="cp-rgb-field"><span>G</span><input type="number" min="0" max="255" class="cp-g" value="${rgb.g}"></label>
+        <label class="cp-rgb-field"><span>B</span><input type="number" min="0" max="255" class="cp-b" value="${rgb.b}"></label>
+      </div>
+
+      <div>
+        <div class="slider-head" style="margin-bottom:5px">
+          <span>Curated &amp; Custom Palettes</span>
+          <button type="button" class="btn btn-sm cp-new-pal" title="Save current recent colours as custom palette">+ Palette</button>
+        </div>
+        <select class="btn cp-pal-select" style="width:100%;margin-bottom:7px"></select>
+        <div class="swatches-grid cp-pal-swatches"></div>
+      </div>
+
+      <div>
+        <div class="slider-head"><span>Recently Used</span></div>
+        <div class="swatches-grid cp-recent-swatches"></div>
+      </div>
+
+      <div>
+        <div class="slider-head"><span>Favourite Colours</span><span style="font-size:10px">Right-click to remove</span></div>
+        <div class="swatches-grid cp-fav-swatches"></div>
+      </div>
+    </div>
+  `;
+
+  const wheelCanvas = container.querySelector('.cp-wheel-canvas');
+  const svCanvas = container.querySelector('.cp-sv-canvas');
+  const wCtx = wheelCanvas.getContext('2d');
+  const svCtx = svCanvas.getContext('2d');
+  const liveSwatch = container.querySelector('.cp-live-swatch');
+  const hexInput = container.querySelector('.cp-hex-input');
+  const rIn = container.querySelector('.cp-r');
+  const gIn = container.querySelector('.cp-g');
+  const bIn = container.querySelector('.cp-b');
+  const palSelect = container.querySelector('.cp-pal-select');
+  const palSwatches = container.querySelector('.cp-pal-swatches');
+  const recentEl = container.querySelector('.cp-recent-swatches');
+  const favEl = container.querySelector('.cp-fav-swatches');
+
+  // Pre-render static hue wheel onto an offscreen canvas for fast redraws
+  const wheelBuffer = document.createElement('canvas');
+  wheelBuffer.width = 118;
+  wheelBuffer.height = 118;
+  const wbCtx = wheelBuffer.getContext('2d');
+  const cx = 59, cy = 59, outerR = 56, innerR = 40;
+  for (let a = 0; a < 360; a++) {
+    const startAngle = (a - 1) * Math.PI / 180;
+    const endAngle = (a + 1) * Math.PI / 180;
+    wbCtx.beginPath();
+    wbCtx.arc(cx, cy, outerR, startAngle, endAngle);
+    wbCtx.arc(cx, cy, innerR, endAngle, startAngle, true);
+    wbCtx.closePath();
+    wbCtx.fillStyle = `hsl(${a}, 100%, 50%)`;
+    wbCtx.fill();
+  }
+
+  function drawWheel() {
+    wCtx.clearRect(0, 0, 118, 118);
+    wCtx.drawImage(wheelBuffer, 0, 0);
+    const rad = hsv.h * Math.PI / 180;
+    const midR = (outerR + innerR) / 2;
+    const ix = cx + Math.cos(rad) * midR;
+    const iy = cy + Math.sin(rad) * midR;
+    wCtx.beginPath();
+    wCtx.arc(ix, iy, 6, 0, Math.PI * 2);
+    wCtx.strokeStyle = '#ffffff';
+    wCtx.lineWidth = 2.5;
+    wCtx.stroke();
+    wCtx.beginPath();
+    wCtx.arc(ix, iy, 4, 0, Math.PI * 2);
+    wCtx.fillStyle = `hsl(${hsv.h}, 100%, 50%)`;
+    wCtx.fill();
+  }
+
+  function drawSV() {
+    const w = svCanvas.width, h = svCanvas.height;
+    svCtx.clearRect(0, 0, w, h);
+    svCtx.fillStyle = `hsl(${hsv.h}, 100%, 50%)`;
+    svCtx.fillRect(0, 0, w, h);
+
+    const gradW = svCtx.createLinearGradient(0, 0, w, 0);
+    gradW.addColorStop(0, '#ffffff');
+    gradW.addColorStop(1, 'rgba(255,255,255,0)');
+    svCtx.fillStyle = gradW;
+    svCtx.fillRect(0, 0, w, h);
+
+    const gradB = svCtx.createLinearGradient(0, 0, 0, h);
+    gradB.addColorStop(0, 'rgba(0,0,0,0)');
+    gradB.addColorStop(1, '#000000');
+    svCtx.fillStyle = gradB;
+    svCtx.fillRect(0, 0, w, h);
+
+    const ix = hsv.s * w;
+    const iy = (1 - hsv.v) * h;
+    svCtx.beginPath();
+    svCtx.arc(ix, iy, 6, 0, Math.PI * 2);
+    svCtx.strokeStyle = hsv.v > 0.55 ? '#000000' : '#ffffff';
+    svCtx.lineWidth = 2;
+    svCtx.stroke();
+  }
+
+  function syncUI(commitRecent = false) {
+    rgb = hsvToRgb(hsv.h, hsv.s, hsv.v);
+    const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+    brushColor = hex;
+    liveSwatch.style.background = hex;
+    if (document.activeElement !== hexInput) hexInput.value = hex.toUpperCase();
+    if (document.activeElement !== rIn) rIn.value = rgb.r;
+    if (document.activeElement !== gIn) gIn.value = rgb.g;
+    if (document.activeElement !== bIn) bIn.value = rgb.b;
+    drawWheel();
+    drawSV();
+    if (commitRecent) {
+      pushRecentColor(hex);
+      renderMiniSwatches();
+    }
+    highlightActiveSwatches(hex);
+    if (onChange) onChange(hex);
+  }
+
+  function setFromHex(hex, commit = true) {
+    const clean = normalizeHex(hex);
+    rgb = hexToRgb(clean);
+    hsv = rgbToHsv(rgb.r, rgb.g, rgb.b);
+    syncUI(commit);
+  }
+
+  function highlightActiveSwatches(hex) {
+    const low = hex.toLowerCase();
+    container.querySelectorAll('.swatch-btn').forEach(b => {
+      b.classList.toggle('active', (b.dataset.color || '').toLowerCase() === low);
+    });
+  }
+
+  function renderPaletteOptions() {
+    const allNames = [...Object.keys(CURATED_PALETTES), ...Object.keys(customPalettes)];
+    if (!allNames.includes(currentPaletteName)) currentPaletteName = allNames[0];
+    palSelect.innerHTML = allNames.map(n => `<option value="${escapeHTML(n)}" ${n === currentPaletteName ? 'selected' : ''}>${escapeHTML(n)}</option>`).join('');
+    renderCurrentPaletteSwatches();
+  }
+
+  function renderCurrentPaletteSwatches() {
+    const cols = CURATED_PALETTES[currentPaletteName] || customPalettes[currentPaletteName] || [];
+    palSwatches.innerHTML = cols.map(c => `<button type="button" class="swatch-btn" style="background:${c}" data-color="${c}" title="${c}"></button>`).join('');
+    palSwatches.querySelectorAll('.swatch-btn').forEach(b => {
+      b.onclick = () => setFromHex(b.dataset.color, true);
+    });
+    highlightActiveSwatches(brushColor);
+  }
+
+  function renderMiniSwatches() {
+    recentEl.innerHTML = recentColors.map(c => `<button type="button" class="swatch-btn" style="background:${c}" data-color="${c}" title="${c}"></button>`).join('');
+    recentEl.querySelectorAll('.swatch-btn').forEach(b => {
+      b.onclick = () => setFromHex(b.dataset.color, false);
+    });
+
+    favEl.innerHTML = favColors.map(c => `<button type="button" class="swatch-btn" style="background:${c}" data-color="${c}" title="${c} (Right-click to remove)"></button>`).join('');
+    favEl.querySelectorAll('.swatch-btn').forEach(b => {
+      b.onclick = () => setFromHex(b.dataset.color, true);
+      b.oncontextmenu = e => {
+        e.preventDefault();
+        favColors = favColors.filter(x => x.toLowerCase() !== b.dataset.color.toLowerCase());
+        saveJSON(STORAGE_KEYS.favColors, favColors);
+        renderMiniSwatches();
+      };
+    });
+    highlightActiveSwatches(brushColor);
+  }
+
+  // Wheel pointer events
+  let draggingWheel = false;
+  function handleWheelPointer(e) {
+    const rect = wheelCanvas.getBoundingClientRect();
+    const x = e.clientX - rect.left - cx;
+    const y = e.clientY - rect.top - cy;
+    let angle = Math.atan2(y, x) * 180 / Math.PI;
+    if (angle < 0) angle += 360;
+    hsv.h = angle;
+    syncUI(false);
+  }
+  wheelCanvas.onpointerdown = e => {
+    draggingWheel = true;
+    wheelCanvas.setPointerCapture(e.pointerId);
+    handleWheelPointer(e);
+  };
+  wheelCanvas.onpointermove = e => { if (draggingWheel) handleWheelPointer(e); };
+  wheelCanvas.onpointerup = wheelCanvas.onpointercancel = () => {
+    if (draggingWheel) { draggingWheel = false; syncUI(true); }
+  };
+
+  // SV Box pointer events
+  let draggingSV = false;
+  function handleSVPointer(e) {
+    const rect = svCanvas.getBoundingClientRect();
+    hsv.s = clamp((e.clientX - rect.left) / rect.width, 0, 1);
+    hsv.v = clamp(1 - (e.clientY - rect.top) / rect.height, 0, 1);
+    syncUI(false);
+  }
+  svCanvas.onpointerdown = e => {
+    draggingSV = true;
+    svCanvas.setPointerCapture(e.pointerId);
+    handleSVPointer(e);
+  };
+  svCanvas.onpointermove = e => { if (draggingSV) handleSVPointer(e); };
+  svCanvas.onpointerup = svCanvas.onpointercancel = () => {
+    if (draggingSV) { draggingSV = false; syncUI(true); }
+  };
+
+  hexInput.onchange = () => setFromHex(hexInput.value, true);
+  hexInput.oninput = () => {
+    if (/^#?[0-9a-fA-F]{6}$/.test(hexInput.value.trim())) {
+      setFromHex(hexInput.value, false);
+    }
+  };
+
+  [rIn, gIn, bIn].forEach(inp => {
+    inp.oninput = () => {
+      const r = clamp(+rIn.value || 0, 0, 255);
+      const g = clamp(+gIn.value || 0, 0, 255);
+      const b = clamp(+bIn.value || 0, 0, 255);
+      hsv = rgbToHsv(r, g, b);
+      syncUI(true);
+    };
+  });
+
+  palSelect.onchange = () => {
+    currentPaletteName = palSelect.value;
+    renderCurrentPaletteSwatches();
+  };
+
+  container.querySelector('.cp-add-fav').onclick = () => {
+    const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+    if (!favColors.some(c => c.toLowerCase() === hex.toLowerCase())) {
+      favColors = [hex, ...favColors].slice(0, 16);
+      saveJSON(STORAGE_KEYS.favColors, favColors);
+      renderMiniSwatches();
+      toast('Saved to Favourite Colours');
+    }
+  };
+
+  container.querySelector('.cp-new-pal').onclick = () => {
+    const name = prompt('Enter a name for your custom palette (uses your 8 recent colours):', 'My Diwali Palette');
+    if (!name || !name.trim()) return;
+    customPalettes[name.trim()] = [...recentColors];
+    saveJSON(STORAGE_KEYS.customPalettes, customPalettes);
+    currentPaletteName = name.trim();
+    renderPaletteOptions();
+    toast(`Palette "${name.trim()}" saved`);
+  };
+
+  renderPaletteOptions();
+  renderMiniSwatches();
+  syncUI(false);
+
+  return { setColor: setFromHex, getColor: () => brushColor };
+}
+
+/* ==========================================
+   CORE NAVIGATION & GALLERY
+   ========================================== */
 const titles = {
-  rangoli: ['Rangoli Studio', 'Create exquisite symmetrical art with grain textures, motifs, stamps and expanded palettes.'],
-  diya: ['DiyaVerse', 'Arrange handcrafted terracotta, brass and lotus diyas with flickering light and ambient festival sound.'],
-  painting: ['Light Painting', 'Paint luminous text messages and particle trails, and record your light art animations.'],
-  golden: ['Golden Hour', 'Design a courtyard Pookalam, decorate a festive Mela stall, and explore a living Diwali neighbourhood.'],
-  fireworks: ['Firework Playground', 'An immersive night-sky playground with interactive sparklers, classic crackers, and celestial fireworks.']
+  rangoli: ['Rangoli Studio', 'Craft symmetrical rangoli art with 12 brushes, traditional patterns, and custom palettes.'],
+  diya: ['DiyaVerse', 'Design sacred lightscapes with customizable clay & metallic diyas, flames, and flower garlands.'],
+  painting: ['Light Painting', 'Paint luminous particle trails, ribbons, and multi-layer light art.'],
+  golden: ['Golden Hour', 'Illuminate the homes, hang marigold garlands, and complete festive neighbourhood missions.']
 };
 
 function toast(msg) {
@@ -120,74 +1792,16 @@ function toast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(toast.timer);
-  toast.timer = setTimeout(() => t.classList.remove('show'), 2300);
+  toast.timer = setTimeout(() => t.classList.remove('show'), 2200);
 }
-
-// Web Audio API Sound generator
-function playSound(type) {
-  if (!soundOn) return;
-  try {
-    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-    if (audioCtx.state === 'suspended') audioCtx.resume();
-    let osc = audioCtx.createOscillator();
-    let gain = audioCtx.createGain();
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    
-    let now = audioCtx.currentTime;
-    if (type === 'chime') {
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(523.25, now); // C5
-      osc.frequency.exponentialRampToValueAtTime(1046.5, now + 0.3);
-      gain.gain.setValueAtTime(0.08, now);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
-      osc.start(now);
-      osc.stop(now + 0.6);
-    } else if (type === 'pop') {
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(300, now);
-      osc.frequency.exponentialRampToValueAtTime(120, now + 0.12);
-      gain.gain.setValueAtTime(0.1, now);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
-      osc.start(now);
-      osc.stop(now + 0.12);
-    } else if (type === 'sparkle') {
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(800 + Math.random()*400, now);
-      gain.gain.setValueAtTime(0.05, now);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.2);
-      osc.start(now);
-      osc.stop(now + 0.2);
-    } else if (type === 'save') {
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(440, now);
-      osc.frequency.setValueAtTime(659.25, now + 0.1);
-      gain.gain.setValueAtTime(0.1, now);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
-      osc.start(now);
-      osc.stop(now + 0.35);
-    }
-  } catch(e) {}
-}
-
-$('#soundBtn').onclick = () => {
-  soundOn = !soundOn;
-  $('#soundBtn').textContent = soundOn ? '♫ Sound: On' : '♫ Sound: Off';
-  if (soundOn) {
-    playSound('chime');
-    toast('Audio enabled.');
-  } else {
-    toast('Audio muted.');
-  }
-};
-
-$('#toranToggle').onchange = e => {
-  $('#globalToran').style.display = e.target.checked ? 'flex' : 'none';
-  if (e.target.checked) playSound('sparkle');
-};
 
 function openExperience(name) {
+  if (activeCleanup) {
+    try { activeCleanup(); } catch (e) {}
+    activeCleanup = null;
+  }
   current = name;
+  $$('.experience').forEach(b => b.classList.toggle('active-exp', b.dataset.open === name));
   $('#workspaceTitle').textContent = titles[name][0];
   $('#workspaceDesc').textContent = titles[name][1];
   body.innerHTML = '';
@@ -195,872 +1809,2443 @@ function openExperience(name) {
   if (name === 'diya') buildDiya();
   if (name === 'painting') buildPainting();
   if (name === 'golden') buildGolden();
-  if (name === 'fireworks') buildFireworks();
   $('#workspace').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => openExperience(b.dataset.open)));
+$$('[data-open]').forEach(b => b.addEventListener('click', () => openExperience(b.dataset.open)));
 $('#exploreBtn').onclick = () => $('#experiences').scrollIntoView({ behavior: 'smooth' });
-document.querySelectorAll('[data-scroll]').forEach(b => b.onclick = () => document.getElementById(b.dataset.scroll).scrollIntoView({ behavior: 'smooth' }));
+$$('[data-scroll]').forEach(b => b.onclick = () => {
+  $$('[data-scroll]').forEach(x => x.classList.toggle('active', x === b));
+  document.getElementById(b.dataset.scroll).scrollIntoView({ behavior: 'smooth' });
+});
 $('#resetView').onclick = () => {
+  if (activeCleanup) { try { activeCleanup(); } catch (e) {} activeCleanup = null; }
   current = '';
+  $$('.experience').forEach(b => b.classList.remove('active-exp'));
   $('#workspaceTitle').textContent = 'Choose your experience';
-  $('#workspaceDesc').textContent = 'Select a playground above to begin creating.';
-  body.innerHTML = '<div class="empty">Your creative space is waiting. Choose an experience to begin.</div>';
+  $('#workspaceDesc').textContent = 'Select a creative studio above to begin crafting.';
+  body.innerHTML = '<div class="empty">Your creative space is waiting. Choose an experience above to begin.</div>';
 };
 
-function saveImage(data, name) {
-  try {
-    let arr = JSON.parse(localStorage.getItem('deepavali-creations') || '[]');
-    arr.unshift({ id: Date.now(), name, date: new Date().toLocaleDateString(), data });
-    arr = arr.slice(0, 24);
-    localStorage.setItem('deepavali-creations', JSON.stringify(arr));
-    renderGallery();
-    playSound('save');
-    toast('Saved to My Creations');
-  } catch(e) {
-    toast('Storage is full. Delete older creations and try again.');
-  }
-}
-
-function renderGallery() {
-  let arr = [];
-  try { arr = JSON.parse(localStorage.getItem('deepavali-creations') || '[]'); } catch(e){}
-  const g = $('#gallery');
-  if (!arr.length) {
-    g.innerHTML = '<div class="empty">Nothing saved yet. Make something wonderful.</div>';
-    return;
-  }
-  g.innerHTML = arr.map(x => `
-    <article class="creation">
-      <img src="${x.data}" alt="Saved artwork">
-      <strong>${escapeHTML(x.name)}</strong>
-      <small>${escapeHTML(x.date)}</small><br>
-      <button data-delete="${x.id}">Delete</button>
-      <button data-download="${x.id}">Download</button>
-    </article>
-  `).join('');
-  g.querySelectorAll('[data-delete]').forEach(b => b.onclick = () => {
-    let a = arr.filter(x => x.id != b.dataset.delete);
-    localStorage.setItem('deepavali-creations', JSON.stringify(a));
-    renderGallery();
-    toast('Deleted creation');
-  });
-  g.querySelectorAll('[data-download]').forEach(b => b.onclick = () => {
-    let x = arr.find(x => x.id == b.dataset.download);
-    downloadData(x.data, x.name + '.png');
-  });
-}
-
 function escapeHTML(s) {
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
 function downloadData(data, name) {
-  let a = document.createElement('a');
+  const a = document.createElement('a');
   a.href = data;
   a.download = name;
   a.click();
 }
 
+function saveImage(data, name) {
+  try {
+    let arr = loadJSON(STORAGE_KEYS.creations, []);
+    arr.unshift({
+      id: Date.now(),
+      name: name || 'Diwali Artwork',
+      date: new Date().toLocaleDateString(),
+      data
+    });
+    arr = arr.slice(0, 24);
+    localStorage.setItem(STORAGE_KEYS.creations, JSON.stringify(arr));
+    renderGallery();
+    toast('Saved to My Creations');
+  } catch (e) {
+    toast('Storage is full. Delete older creations and try again.');
+  }
+}
+
+let activeModalId = null;
+
+function openPreviewModal(item) {
+  if (!item) return;
+  activeModalId = item.id;
+  $('#modalTitle').textContent = item.name;
+  $('#modalImg').src = item.data;
+  $('#modalMeta').textContent = `Saved on ${item.date}`;
+  $('#previewModal').classList.remove('hidden');
+}
+
+function closePreviewModal() {
+  $('#previewModal').classList.add('hidden');
+  activeModalId = null;
+}
+
+$('#modalClose').onclick = closePreviewModal;
+$('#previewModal').onclick = e => { if (e.target === $('#previewModal')) closePreviewModal(); };
+$('#modalDownload').onclick = () => {
+  const arr = loadJSON(STORAGE_KEYS.creations, []);
+  const item = arr.find(x => x.id == activeModalId);
+  if (item) downloadData(item.data, item.name.replace(/\s+/g, '-').toLowerCase() + '.png');
+};
+$('#modalRename').onclick = () => {
+  if (activeModalId != null) renameCreation(activeModalId);
+};
+
+function renameCreation(id) {
+  const arr = loadJSON(STORAGE_KEYS.creations, []);
+  const item = arr.find(x => x.id == id);
+  if (!item) return;
+  const next = prompt('Rename artwork:', item.name);
+  if (next && next.trim()) {
+    item.name = next.trim();
+    saveJSON(STORAGE_KEYS.creations, arr);
+    if (activeModalId == id) $('#modalTitle').textContent = item.name;
+    renderGallery();
+    toast('Creation renamed');
+  }
+}
+
+function renderGallery() {
+  const arr = loadJSON(STORAGE_KEYS.creations, []);
+  const g = $('#gallery');
+  const query = ($('#gallerySearch')?.value || '').trim().toLowerCase();
+  const filter = $('#galleryFilter')?.value || 'all';
+
+  const filtered = arr.filter(x => {
+    const nameMatch = String(x.name || '').toLowerCase().includes(query);
+    const studioMatch = filter === 'all' || String(x.name || '').toLowerCase().includes(filter.toLowerCase());
+    return nameMatch && studioMatch;
+  });
+
+  if (!filtered.length) {
+    g.innerHTML = `<div class="empty">${arr.length ? 'No creations match your search filter.' : 'Nothing saved yet. Make something wonderful.'}</div>`;
+    return;
+  }
+
+  g.innerHTML = filtered.map(x => `
+    <article class="creation">
+      <div class="creation-img-wrap" data-preview="${x.id}" title="Click to view full size">
+        <img src="${x.data}" alt="${escapeHTML(x.name)}">
+        <span class="creation-badge">${escapeHTML(x.date)}</span>
+      </div>
+      <div class="creation-meta">
+        <strong title="${escapeHTML(x.name)}">${escapeHTML(x.name)}</strong>
+      </div>
+      <div class="creation-actions">
+        <button type="button" data-preview="${x.id}">View</button>
+        <button type="button" data-rename="${x.id}">Rename</button>
+        <button type="button" data-download="${x.id}">Save</button>
+        <button type="button" class="del-btn" data-delete="${x.id}">Delete</button>
+      </div>
+    </article>
+  `).join('');
+
+  g.querySelectorAll('[data-preview]').forEach(el => el.onclick = () => {
+    const item = arr.find(x => x.id == el.dataset.preview);
+    openPreviewModal(item);
+  });
+  g.querySelectorAll('[data-rename]').forEach(b => b.onclick = () => renameCreation(b.dataset.rename));
+  g.querySelectorAll('[data-delete]').forEach(b => b.onclick = () => {
+    const next = arr.filter(x => x.id != b.dataset.delete);
+    saveJSON(STORAGE_KEYS.creations, next);
+    renderGallery();
+    toast('Artwork deleted');
+  });
+  g.querySelectorAll('[data-download]').forEach(b => b.onclick = () => {
+    const item = arr.find(x => x.id == b.dataset.download);
+    if (item) downloadData(item.data, (item.name || 'deepavali-art') + '.png');
+  });
+}
+
+$('#gallerySearch').oninput = renderGallery;
+$('#galleryFilter').onchange = renderGallery;
 $('#clearAll').onclick = () => {
   if (confirm('Delete all saved creations from this browser?')) {
-    localStorage.removeItem('deepavali-creations');
+    localStorage.removeItem(STORAGE_KEYS.creations);
     renderGallery();
     toast('Gallery cleared');
   }
 };
 
 /* ==========================================
-   1. RANGOLI STUDIO (Advanced Upgraded)
+   1. RANGOLI STUDIO — ADVANCED CREATIVE TOOLS
    ========================================== */
+const RANGOLI_BRUSHES = [
+  { id: 'classic', name: 'Classic Powder', icon: '∷' },
+  { id: 'soft', name: 'Soft Powder', icon: '☁' },
+  { id: 'glitter', name: 'Glitter Powder', icon: '✨' },
+  { id: 'neon', name: 'Neon Glow', icon: '💡' },
+  { id: 'gold', name: 'Metallic Gold', icon: '🪙' },
+  { id: 'silver', name: 'Metallic Silver', icon: '💿' },
+  { id: 'petals', name: 'Flower Petals', icon: '🌸' },
+  { id: 'dotted', name: 'Dotted Brush', icon: '••' },
+  { id: 'sparkle', name: 'Sparkle Brush', icon: '✦' },
+  { id: 'airbrush', name: 'Soft Airbrush', icon: '◎' },
+  { id: 'floralstamp', name: 'Floral Stamp', icon: '❁' },
+  { id: 'pattern', name: 'Pattern Brush', icon: '❖' }
+];
+
+const RANGOLI_PATTERNS = [
+  { id: 'lotus', name: 'Lotus Petals', icon: '🪷' },
+  { id: 'peacock', name: 'Peacock Motif', icon: '🦚' },
+  { id: 'floral', name: 'Floral Ring', icon: '🌼' },
+  { id: 'geometric', name: 'Geometric Star', icon: '✡' },
+  { id: 'border', name: 'Traditional Border', icon: '❖' },
+  { id: 'mandala', name: 'Mandala Core', icon: '☸' }
+];
+
 function buildRangoli() {
   body.innerHTML = `
-    <div class="toolrow">
-      <button id="rUndo">Undo</button>
-      <button id="rRedo">Redo</button>
-      <button id="rGenerate">Generate Pattern</button>
-      <button id="rClear">Clear</button>
-      <button id="rSave">Save PNG</button>
-      <button id="rDownload">Export PNG</button>
-    </div>
-    <div class="stage">
-      <div class="rangoli-layout">
-        <div class="canvas-wrap square"><canvas id="rangoliCanvas"></canvas></div>
-        <aside class="sidepanel">
-          <h3>Rangoli Studio</h3>
-          <div class="palette-block">
-            <div class="palette-title"><span>Festival Palettes</span><span id="rColourName">Gold</span></div>
-            <div class="swatches palette-scroll" id="rSwatches"></div>
-            <input class="custom-colour" type="color" id="rCustom" value="#f5c96b" aria-label="Choose custom colour">
-          </div>
-          <label class="control-label">Symmetry</label>
-          <select id="rSym" style="width:100%"><option value="4">4-fold</option><option value="6">6-fold</option><option value="8" selected>8-fold</option><option value="12">12-fold</option><option value="16">16-fold</option></select>
-          
-          <label class="control-label">Brush Size</label>
-          <input id="rSize" type="range" min="2" max="32" value="8" style="width:100%">
-          
-          <label class="control-label">Texture / Grain</label>
-          <select id="rTexture" style="width:100%">
-            <option value="sand">Rangoli Sand Powder</option>
-            <option value="rice">Rice Flour Grain</option>
-            <option value="smooth">Smooth Shaded</option>
-          </select>
+    <div class="studio-shell">
+      <div class="studio-topbar">
+        <div class="toolbar-group">
+          <button type="button" class="btn" id="rUndo" title="Undo last stroke">↶ Undo</button>
+          <button type="button" class="btn" id="rRedo" title="Redo stroke">↷ Redo</button>
+          <span class="toolbar-divider"></span>
+          <button type="button" class="btn" id="rEraserBtn" title="Toggle Eraser">⌫ Eraser</button>
+          <button type="button" class="btn" id="rGuidesBtn" title="Toggle Symmetry Guides">◎ Guides: On</button>
+          <button type="button" class="btn" id="rGenerate" title="Auto-generate festive rangoli">✨ Generate</button>
+          <button type="button" class="btn btn-danger" id="rClear" title="Clear entire canvas">🗑 Clear</button>
+        </div>
+        <div class="toolbar-group">
+          <label style="font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px">
+            Symmetry
+            <select id="rSym" class="btn">
+              <option value="2">2-fold</option>
+              <option value="4">4-fold</option>
+              <option value="6">6-fold</option>
+              <option value="8" selected>8-fold</option>
+              <option value="12">12-fold</option>
+              <option value="16">16-fold</option>
+            </select>
+          </label>
+          <button type="button" class="btn" id="rMirrorBtn" title="Mirror reflections across axes">⇄ Mirror: On</button>
+          <span class="toolbar-divider"></span>
+          <button type="button" class="btn btn-gold" id="rSave">★ Save to Gallery</button>
+          <button type="button" class="btn" id="rDownload">↓ Export PNG</button>
+        </div>
+      </div>
 
-          <label class="control-label">Stamp Motif</label>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
-            <button class="stamp-btn" data-stamp="lotus">🪷 Lotus</button>
-            <button class="stamp-btn" data-stamp="diya">🪔 Diya</button>
-            <button class="stamp-btn" data-stamp="peacock">🦚 Peacock</button>
+      <div class="studio-grid">
+        <!-- LEFT PANEL: Brush Library & Decorative Patterns -->
+        <aside class="studio-panel">
+          <div class="panel-section">
+            <h3 class="panel-title">Brush Library <span class="sub">12 Presets</span></h3>
+            <div class="preset-grid" id="rBrushGrid"></div>
           </div>
-          <p style="margin-top:12px;">Draw around the centre with sand textures, or place traditional motifs instantly.</p>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Pattern Library <span class="sub">Stamp &amp; Combine</span></h3>
+            <p style="font-size:11px;color:var(--muted);margin:0 0 8px">Click a pattern to stamp onto your rangoli or select a stamp tool to place anywhere.</p>
+            <div class="preset-grid" id="rPatternGrid"></div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Canvas Background</h3>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+              <button type="button" class="btn btn-sm r-bg-preset" data-bg="#0b1020">Midnight</button>
+              <button type="button" class="btn btn-sm r-bg-preset" data-bg="#1f0d1d">Royal Plum</button>
+              <button type="button" class="btn btn-sm r-bg-preset" data-bg="#23120b">Terracotta</button>
+              <button type="button" class="btn btn-sm r-bg-preset" data-bg="#071c18">Emerald</button>
+              <input type="color" id="rBgColor" value="#0b1020" title="Custom background colour" style="width:28px;height:28px;border:0;background:none;cursor:pointer">
+            </div>
+          </div>
+        </aside>
+
+        <!-- CENTER: Interactive Canvas -->
+        <div class="studio-stage">
+          <div class="canvas-viewport">
+            <div class="canvas-wrap square" id="rCanvasWrap">
+              <canvas id="rangoliCanvas"></canvas>
+            </div>
+          </div>
+          <div class="stage-footer">
+            <span id="rStatusText">Brush: Classic Powder · 8-fold Symmetry</span>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span>Zoom</span>
+              <button type="button" class="btn btn-sm" id="rZoomOut">−</button>
+              <span id="rZoomVal" style="min-width:40px;text-align:center;color:var(--gold2)">100%</span>
+              <button type="button" class="btn btn-sm" id="rZoomIn">+</button>
+              <button type="button" class="btn btn-sm" id="rZoomReset">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: Stroke Customization & Colour Picker -->
+        <aside class="studio-panel">
+          <div class="panel-section">
+            <h3 class="panel-title">Stroke Customization</h3>
+            <div class="slider-row">
+              <div class="slider-head"><span>Brush Size</span><span class="slider-val" id="rSizeVal">10 px</span></div>
+              <input id="rSize" type="range" min="2" max="54" value="10">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Opacity</span><span class="slider-val" id="rOpacityVal">100%</span></div>
+              <input id="rOpacity" type="range" min="10" max="100" value="100">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Softness</span><span class="slider-val" id="rSoftnessVal">30%</span></div>
+              <input id="rSoftness" type="range" min="0" max="100" value="30">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Spacing</span><span class="slider-val" id="rSpacingVal">25%</span></div>
+              <input id="rSpacing" type="range" min="5" max="100" value="25">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Glow Intensity</span><span class="slider-val" id="rGlowVal">40%</span></div>
+              <input id="rGlow" type="range" min="0" max="100" value="40">
+            </div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Pro Colour Studio</h3>
+            <div id="rColorPickerMount"></div>
+          </div>
         </aside>
       </div>
-    </div>`;
+    </div>
+  `;
   initRangoli();
 }
 
 function initRangoli() {
-  const c = $('#rangoliCanvas'), ctx = c.getContext('2d');
-  let dpr = Math.min(devicePixelRatio || 1, 2), w = 620, h = 620, strokes = [], redo = [];
-  c.width = w * dpr; c.height = h * dpr;
+  const c = $('#rangoliCanvas');
+  const ctx = c.getContext('2d');
+  const w = 640, h = 640;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  c.width = w * dpr;
+  c.height = h * dpr;
   ctx.scale(dpr, dpr);
 
-  const palettes = [
-    { name: 'Royal Gold', hex: '#d4af37' }, { name: 'Marigold', hex: '#ff9900' }, { name: 'Vermilion', hex: '#e85d5d' },
-    { name: 'Turmeric', hex: '#ffd700' }, { name: 'Leaf Green', hex: '#43e6a2' }, { name: 'Royal Purple', hex: '#7950f2' },
-    { name: 'Magenta', hex: '#ff1493' }, { name: 'Teal', hex: '#00c2a8' }, { name: 'Copper', hex: '#cd7f32' },
-    { name: 'Silver', hex: '#c0c0c0' }, { name: 'Rose', hex: '#ed8bb7' }, { name: 'Indigo', hex: '#4776e6' },
-    { name: 'Amber', hex: '#f28d45' }, { name: 'Lavender', hex: '#b58af2' }, { name: 'Ivory', hex: '#fff8e9' }
-  ];
+  // Offscreen drawing layer so eraser only erases paint, not background
+  const paintLayer = document.createElement('canvas');
+  paintLayer.width = w * dpr;
+  paintLayer.height = h * dpr;
+  const pCtx = paintLayer.getContext('2d');
+  pCtx.scale(dpr, dpr);
 
-  function selectColour(col, name) {
-    brushColor = col;
-    $('#rCustom').value = col;
-    $('#rColourName').textContent = name || 'Custom';
-    $('#rSwatches').querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.color === col));
+  let currentBrush = 'classic';
+  let isEraser = false;
+  let showGuides = true;
+  let mirrorSym = true;
+  let bgColor = '#0b1020';
+  let zoom = 1;
+  let history = [];
+  let redoStack = [];
+
+  function saveSnapshot() {
+    const snap = document.createElement('canvas');
+    snap.width = paintLayer.width;
+    snap.height = paintLayer.height;
+    snap.getContext('2d').drawImage(paintLayer, 0, 0);
+    history.push(snap);
+    if (history.length > 25) history.shift();
+    redoStack = [];
   }
 
-  $('#rSwatches').innerHTML = palettes.map(p => `<button class="swatch" title="${p.name}" style="background:${p.hex}" data-color="${p.hex}" aria-label="${p.name}"></button>`).join('');
-  $('#rSwatches').querySelectorAll('button').forEach(b => b.onclick = () => selectColour(b.dataset.color, b.title));
-  $('#rCustom').oninput = e => selectColour(e.target.value, 'Custom');
-  selectColour(palettes[0].hex, palettes[0].name);
+  function restoreSnapshot(snap) {
+    pCtx.save();
+    pCtx.setTransform(1, 0, 0, 1, 0, 0);
+    pCtx.clearRect(0, 0, paintLayer.width, paintLayer.height);
+    pCtx.drawImage(snap, 0, 0);
+    pCtx.restore();
+    compositeRangoli();
+  }
 
-  function draw() {
+  function compositeRangoli() {
     ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = '#0b1020';
+    ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, w, h);
 
-    // Subtle background mandala guidelines
-    ctx.save();
-    ctx.translate(w/2, h/2);
-    ctx.strokeStyle = 'rgba(245,201,107,.12)';
-    ctx.lineWidth = 1;
-    for (let r of [60, 120, 180, 240, 280]) {
-      ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.stroke();
-    }
-    ctx.restore();
-
-    let n = +$('#rSym').value;
-    let textureMode = $('#rTexture').value;
-
-    strokes.forEach(s => {
-      for (let i = 0; i < n; i++) {
-        ctx.save();
-        ctx.translate(w/2, h/2);
-        ctx.rotate(i * Math.PI * 2 / n);
-
-        if (s.type === 'stamp') {
-          ctx.font = `${s.size * 3}px serif`;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText(s.emoji, s.x, s.y);
-        } else {
-          ctx.fillStyle = s.color;
-          ctx.strokeStyle = s.color;
-          ctx.lineWidth = s.size;
-          ctx.lineCap = 'round';
-          ctx.lineJoin = 'round';
-
-          if (textureMode === 'sand') {
-            // Draw textured sand grain dots
-            let count = Math.max(3, Math.floor(s.size * 1.5));
-            for(let k=0; k<count; k++) {
-              let ox = (Math.random() - 0.5) * s.size;
-              let oy = (Math.random() - 0.5) * s.size;
-              ctx.beginPath();
-              ctx.arc(s.x + ox, s.y + oy, 1 + Math.random()*1.5, 0, Math.PI*2);
-              ctx.fill();
-            }
-          } else if (textureMode === 'rice') {
-            // Rice flour dashes
-            ctx.fillStyle = s.color;
-            ctx.fillRect(s.x, s.y, s.size * 0.8, s.size * 0.3);
-          } else {
-            // Smooth stroke
-            ctx.beginPath();
-            ctx.arc(s.x, s.y, s.size * 0.7, 0, Math.PI * 2);
-            ctx.fill();
-          }
-        }
-        ctx.restore();
+    if (showGuides) {
+      ctx.save();
+      ctx.translate(w / 2, h / 2);
+      ctx.strokeStyle = 'rgba(245, 201, 107, 0.12)';
+      ctx.lineWidth = 1;
+      for (let r of [65, 130, 195, 260, 305]) {
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.stroke();
       }
-    });
+      const n = +$('#rSym').value;
+      for (let i = 0; i < n; i++) {
+        const a = (i * Math.PI * 2) / n;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(Math.cos(a) * 310, Math.sin(a) * 310);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(paintLayer, 0, 0);
+    ctx.restore();
   }
 
-  let drawing = false, last = null;
-  function pos(e) {
-    let r = c.getBoundingClientRect();
-    return { x: (e.clientX - r.left) * w / r.width - w/2, y: (e.clientY - r.top) * h / r.height - h/2 };
+  // Mount Brush Library
+  const brushGrid = $('#rBrushGrid');
+  brushGrid.innerHTML = RANGOLI_BRUSHES.map(b => `
+    <button type="button" class="preset-btn ${b.id === currentBrush ? 'active' : ''}" data-rbrush="${b.id}">
+      <span class="preset-icon">${b.icon}</span>
+      <span>${b.name}</span>
+    </button>
+  `).join('');
+
+  function updateStatus() {
+    const bObj = RANGOLI_BRUSHES.find(b => b.id === currentBrush);
+    const sym = $('#rSym').value;
+    $('#rStatusText').textContent = isEraser
+      ? `Tool: Eraser (${$('#rSize').value}px)`
+      : `Brush: ${bObj ? bObj.name : currentBrush} · ${sym}-fold Symmetry`;
+  }
+
+  brushGrid.querySelectorAll('[data-rbrush]').forEach(btn => {
+    btn.onclick = () => {
+      isEraser = false;
+      $('#rEraserBtn').classList.remove('active');
+      currentBrush = btn.dataset.rbrush;
+      brushGrid.querySelectorAll('[data-rbrush]').forEach(x => x.classList.toggle('active', x === btn));
+      updateStatus();
+    };
+  });
+
+  // Mount Pattern Library
+  const patternGrid = $('#rPatternGrid');
+  patternGrid.innerHTML = RANGOLI_PATTERNS.map(p => `
+    <button type="button" class="preset-btn" data-rpattern="${p.id}" title="Click to add ${p.name}">
+      <span class="preset-icon">${p.icon}</span>
+      <span>${p.name}</span>
+    </button>
+  `).join('');
+
+  patternGrid.querySelectorAll('[data-rpattern]').forEach(btn => {
+    btn.onclick = () => {
+      stampRangoliPattern(btn.dataset.rpattern);
+      saveSnapshot();
+      compositeRangoli();
+      toast(`${btn.textContent.trim()} stamped`);
+    };
+  });
+
+  // Mount Unified Colour Picker
+  mountColorPicker($('#rColorPickerMount'), brushColor, col => {
+    brushColor = col;
+  });
+
+  // Sliders live value bindings
+  const bindSlider = (id, valId, suffix) => {
+    const el = $(id), vEl = $(valId);
+    el.oninput = () => { vEl.textContent = el.value + suffix; updateStatus(); };
+  };
+  bindSlider('#rSize', '#rSizeVal', ' px');
+  bindSlider('#rOpacity', '#rOpacityVal', '%');
+  bindSlider('#rSoftness', '#rSoftnessVal', '%');
+  bindSlider('#rSpacing', '#rSpacingVal', '%');
+  bindSlider('#rGlow', '#rGlowVal', '%');
+
+  // Render a single symmetrical dab on paintLayer
+  function renderSymmetricalDab(x, y, px, py) {
+    const n = +$('#rSym').value;
+    const size = +$('#rSize').value;
+    const opacity = +$('#rOpacity').value / 100;
+    const softness = +$('#rSoftness').value / 100;
+    const glow = +$('#rGlow').value / 100;
+    const angleStep = (Math.PI * 2) / n;
+    const strokeAngle = Math.atan2(y - py, x - px);
+
+    pCtx.save();
+    pCtx.translate(w / 2, h / 2);
+
+    if (isEraser) {
+      pCtx.globalCompositeOperation = 'destination-out';
+      for (let i = 0; i < n; i++) {
+        pCtx.save();
+        pCtx.rotate(i * angleStep);
+        pCtx.beginPath();
+        pCtx.arc(x, y, size * 0.8, 0, Math.PI * 2);
+        pCtx.fill();
+        if (mirrorSym) {
+          pCtx.scale(1, -1);
+          pCtx.beginPath();
+          pCtx.arc(x, y, size * 0.8, 0, Math.PI * 2);
+          pCtx.fill();
+        }
+        pCtx.restore();
+      }
+      pCtx.restore();
+      return;
+    }
+
+    pCtx.globalAlpha = opacity;
+
+    const drawSingleUnit = (ux, uy, upx, upy, ang) => {
+      pCtx.save();
+      if (glow > 0.05 && ['neon', 'sparkle', 'glitter', 'gold', 'silver'].includes(currentBrush)) {
+        pCtx.shadowColor = currentBrush === 'gold' ? '#ffd700' : currentBrush === 'silver' ? '#e8f1f5' : brushColor;
+        pCtx.shadowBlur = glow * 24;
+      } else if (softness > 0.1 && ['classic', 'soft', 'petals', 'dotted'].includes(currentBrush)) {
+        pCtx.shadowColor = brushColor;
+        pCtx.shadowBlur = softness * 10;
+      }
+
+      switch (currentBrush) {
+        case 'classic': {
+          const dots = Math.max(8, Math.floor(size * 1.4));
+          pCtx.fillStyle = brushColor;
+          for (let k = 0; k < dots; k++) {
+            const r = Math.random() * size * 0.75;
+            const t = Math.random() * Math.PI * 2;
+            pCtx.beginPath();
+            pCtx.arc(ux + Math.cos(t) * r, uy + Math.sin(t) * r, Math.max(0.9, size * 0.09), 0, Math.PI * 2);
+            pCtx.fill();
+          }
+          break;
+        }
+        case 'soft': {
+          const rad = Math.max(2, size * (0.9 + softness * 0.5));
+          const g = pCtx.createRadialGradient(ux, uy, 0, ux, uy, rad);
+          g.addColorStop(0, hexWithAlpha(brushColor, opacity));
+          g.addColorStop(0.55, hexWithAlpha(brushColor, opacity * 0.45));
+          g.addColorStop(1, hexWithAlpha(brushColor, 0));
+          pCtx.fillStyle = g;
+          pCtx.beginPath();
+          pCtx.arc(ux, uy, rad, 0, Math.PI * 2);
+          pCtx.fill();
+          break;
+        }
+        case 'glitter': {
+          for (let k = 0; k < 7; k++) {
+            const r = Math.random() * size * 0.9;
+            const t = Math.random() * Math.PI * 2;
+            const gx = ux + Math.cos(t) * r;
+            const gy = uy + Math.sin(t) * r;
+            pCtx.fillStyle = k % 3 === 0 ? '#ffffff' : k % 3 === 1 ? '#ffe999' : brushColor;
+            pCtx.beginPath();
+            pCtx.arc(gx, gy, 1 + Math.random() * (size * 0.16), 0, Math.PI * 2);
+            pCtx.fill();
+          }
+          break;
+        }
+        case 'neon': {
+          pCtx.lineCap = 'round';
+          pCtx.strokeStyle = brushColor;
+          pCtx.shadowColor = brushColor;
+          pCtx.shadowBlur = Math.max(12, glow * 32);
+          pCtx.lineWidth = size * 0.85;
+          pCtx.beginPath();
+          pCtx.moveTo(upx, upy);
+          pCtx.lineTo(ux, uy);
+          pCtx.stroke();
+
+          pCtx.strokeStyle = '#ffffff';
+          pCtx.lineWidth = Math.max(1.2, size * 0.28);
+          pCtx.beginPath();
+          pCtx.moveTo(upx, upy);
+          pCtx.lineTo(ux, uy);
+          pCtx.stroke();
+          break;
+        }
+        case 'gold':
+        case 'silver': {
+          const isGold = currentBrush === 'gold';
+          const g = pCtx.createLinearGradient(ux - size, uy - size, ux + size, uy + size);
+          if (isGold) {
+            g.addColorStop(0, '#fff4b8');
+            g.addColorStop(0.45, '#e5a93c');
+            g.addColorStop(0.8, '#8f5b14');
+            g.addColorStop(1, '#ffdf85');
+          } else {
+            g.addColorStop(0, '#ffffff');
+            g.addColorStop(0.5, '#b8c6d4');
+            g.addColorStop(0.8, '#6e7b8b');
+            g.addColorStop(1, '#eef5fc');
+          }
+          pCtx.strokeStyle = g;
+          pCtx.fillStyle = g;
+          pCtx.lineCap = 'round';
+          pCtx.lineWidth = size * 0.75;
+          pCtx.beginPath();
+          pCtx.moveTo(upx, upy);
+          pCtx.lineTo(ux, uy);
+          pCtx.stroke();
+          break;
+        }
+        case 'petals': {
+          pCtx.translate(ux, uy);
+          pCtx.rotate(ang);
+          pCtx.fillStyle = brushColor;
+          pCtx.beginPath();
+          pCtx.ellipse(0, 0, size * 1.15, size * 0.52, 0, 0, Math.PI * 2);
+          pCtx.fill();
+          pCtx.strokeStyle = 'rgba(255,255,255,0.35)';
+          pCtx.lineWidth = 1;
+          pCtx.stroke();
+          break;
+        }
+        case 'dotted': {
+          pCtx.fillStyle = brushColor;
+          pCtx.beginPath();
+          pCtx.arc(ux, uy, size * 0.58, 0, Math.PI * 2);
+          pCtx.fill();
+          pCtx.fillStyle = 'rgba(255,255,255,0.45)';
+          pCtx.beginPath();
+          pCtx.arc(ux - size * 0.15, uy - size * 0.15, size * 0.16, 0, Math.PI * 2);
+          pCtx.fill();
+          break;
+        }
+        case 'sparkle': {
+          pCtx.translate(ux, uy);
+          pCtx.fillStyle = brushColor;
+          const sr = size * 1.1;
+          pCtx.beginPath();
+          for (let s = 0; s < 8; s++) {
+            const rad = s % 2 === 0 ? sr : sr * 0.28;
+            const a = (s * Math.PI) / 4;
+            if (s === 0) pCtx.moveTo(Math.cos(a) * rad, Math.sin(a) * rad);
+            else pCtx.lineTo(Math.cos(a) * rad, Math.sin(a) * rad);
+          }
+          pCtx.closePath();
+          pCtx.fill();
+          pCtx.fillStyle = '#ffffff';
+          pCtx.beginPath();
+          pCtx.arc(0, 0, size * 0.2, 0, Math.PI * 2);
+          pCtx.fill();
+          break;
+        }
+        case 'airbrush': {
+          const rad = size * 1.8;
+          const g = pCtx.createRadialGradient(ux, uy, 0, ux, uy, rad);
+          g.addColorStop(0, hexWithAlpha(brushColor, opacity * 0.35));
+          g.addColorStop(1, hexWithAlpha(brushColor, 0));
+          pCtx.fillStyle = g;
+          pCtx.beginPath();
+          pCtx.arc(ux, uy, rad, 0, Math.PI * 2);
+          pCtx.fill();
+          break;
+        }
+        case 'floralstamp': {
+          pCtx.translate(ux, uy);
+          const petR = size * 0.7;
+          pCtx.fillStyle = brushColor;
+          for (let p = 0; p < 6; p++) {
+            pCtx.save();
+            pCtx.rotate((p * Math.PI) / 3);
+            pCtx.beginPath();
+            pCtx.ellipse(petR, 0, petR * 0.65, petR * 0.38, 0, 0, Math.PI * 2);
+            pCtx.fill();
+            pCtx.restore();
+          }
+          pCtx.fillStyle = '#fff3b0';
+          pCtx.beginPath();
+          pCtx.arc(0, 0, size * 0.3, 0, Math.PI * 2);
+          pCtx.fill();
+          break;
+        }
+        case 'pattern': {
+          pCtx.translate(ux, uy);
+          pCtx.rotate(ang);
+          pCtx.fillStyle = brushColor;
+          const d = size * 0.85;
+          pCtx.beginPath();
+          pCtx.moveTo(0, -d);
+          pCtx.lineTo(d * 0.7, 0);
+          pCtx.lineTo(0, d);
+          pCtx.lineTo(-d * 0.7, 0);
+          pCtx.closePath();
+          pCtx.fill();
+          pCtx.fillStyle = '#fff8dc';
+          pCtx.beginPath();
+          pCtx.arc(0, 0, size * 0.2, 0, Math.PI * 2);
+          pCtx.fill();
+          break;
+        }
+      }
+      pCtx.restore();
+    };
+
+    for (let i = 0; i < n; i++) {
+      pCtx.save();
+      pCtx.rotate(i * angleStep);
+      drawSingleUnit(x, y, px, py, strokeAngle);
+      if (mirrorSym) {
+        pCtx.save();
+        pCtx.scale(1, -1);
+        drawSingleUnit(x, y, px, py, -strokeAngle);
+        pCtx.restore();
+      }
+      pCtx.restore();
+    }
+    pCtx.restore();
+  }
+
+  // Stamp pre-built decorative patterns onto paintLayer
+  function stampRangoliPattern(kind) {
+    const n = +$('#rSym').value;
+    const col = brushColor;
+    const size = +$('#rSize').value;
+    pCtx.save();
+    pCtx.translate(w / 2, h / 2);
+    pCtx.strokeStyle = col;
+    pCtx.fillStyle = col;
+    pCtx.lineWidth = Math.max(2, size * 0.22);
+
+    for (let i = 0; i < n; i++) {
+      pCtx.save();
+      pCtx.rotate((i * Math.PI * 2) / n);
+      if (kind === 'lotus') {
+        const r = 115;
+        pCtx.beginPath();
+        pCtx.moveTo(0, r - 38);
+        pCtx.quadraticCurveTo(32, r - 10, 0, r + 36);
+        pCtx.quadraticCurveTo(-32, r - 10, 0, r - 38);
+        pCtx.fillStyle = hexWithAlpha(col, 0.75);
+        pCtx.fill();
+        pCtx.strokeStyle = '#ffe5a3';
+        pCtx.stroke();
+      } else if (kind === 'peacock') {
+        const r = 165;
+        pCtx.beginPath();
+        pCtx.ellipse(0, r, 18, 34, 0, 0, Math.PI * 2);
+        pCtx.fillStyle = '#00bbf9';
+        pCtx.fill();
+        pCtx.beginPath();
+        pCtx.ellipse(0, r + 6, 10, 18, 0, 0, Math.PI * 2);
+        pCtx.fillStyle = '#06d6a0';
+        pCtx.fill();
+        pCtx.beginPath();
+        pCtx.arc(0, r + 10, 6, 0, Math.PI * 2);
+        pCtx.fillStyle = col;
+        pCtx.fill();
+      } else if (kind === 'floral') {
+        const r = 200;
+        for (let p = 0; p < 6; p++) {
+          const a = (p * Math.PI) / 3;
+          pCtx.beginPath();
+          pCtx.arc(Math.cos(a) * 14, r + Math.sin(a) * 14, 8, 0, Math.PI * 2);
+          pCtx.fill();
+        }
+        pCtx.fillStyle = '#fff3b0';
+        pCtx.beginPath();
+        pCtx.arc(0, r, 6, 0, Math.PI * 2);
+        pCtx.fill();
+        pCtx.fillStyle = col;
+      } else if (kind === 'geometric') {
+        pCtx.beginPath();
+        pCtx.moveTo(0, 65);
+        pCtx.lineTo(38, 145);
+        pCtx.lineTo(0, 225);
+        pCtx.lineTo(-38, 145);
+        pCtx.closePath();
+        pCtx.stroke();
+      } else if (kind === 'border') {
+        const r = 265;
+        pCtx.beginPath();
+        pCtx.arc(0, r, 10, 0, Math.PI * 2);
+        pCtx.fill();
+        pCtx.beginPath();
+        pCtx.moveTo(-22, r - 14);
+        pCtx.lineTo(0, r - 30);
+        pCtx.lineTo(22, r - 14);
+        pCtx.stroke();
+      } else if (kind === 'mandala') {
+        for (let ring of [48, 88]) {
+          pCtx.beginPath();
+          pCtx.arc(0, ring, 7, 0, Math.PI * 2);
+          pCtx.fill();
+        }
+        pCtx.beginPath();
+        pCtx.moveTo(0, 20);
+        pCtx.lineTo(15, 68);
+        pCtx.lineTo(-15, 68);
+        pCtx.closePath();
+        pCtx.stroke();
+      }
+      pCtx.restore();
+    }
+    pCtx.restore();
+  }
+
+  // Pointer drawing state with spacing interpolation
+  let drawing = false;
+  let lastPt = null;
+  let distAccum = 0;
+
+  function getPos(e) {
+    const r = c.getBoundingClientRect();
+    return {
+      x: ((e.clientX - r.left) * w) / r.width - w / 2,
+      y: ((e.clientY - r.top) * h) / r.height - h / 2
+    };
   }
 
   c.onpointerdown = e => {
+    e.preventDefault();
     drawing = true;
     c.setPointerCapture(e.pointerId);
-    let q = pos(e);
-    strokes.push({ x: q.x, y: q.y, color: brushColor, size: +$('#rSize').value, type: 'dot' });
-    redo = [];
-    draw();
-    playSound('sparkle');
+    lastPt = getPos(e);
+    distAccum = 0;
+    renderSymmetricalDab(lastPt.x, lastPt.y, lastPt.x, lastPt.y);
+    compositeRangoli();
   };
+
   c.onpointermove = e => {
     if (!drawing) return;
-    let q = pos(e);
-    strokes.push({ x: q.x, y: q.y, color: brushColor, size: +$('#rSize').value, type: 'dot' });
-    draw();
-  };
-  c.onpointerup = c.onpointercancel = () => drawing = false;
+    e.preventDefault();
+    const pt = getPos(e);
+    const dx = pt.x - lastPt.x;
+    const dy = pt.y - lastPt.y;
+    const dist = Math.hypot(dx, dy);
+    const size = +$('#rSize').value;
+    const spacingRatio = +$('#rSpacing').value / 100;
+    const step = ['floralstamp', 'pattern', 'dotted', 'sparkle', 'petals'].includes(currentBrush)
+      ? Math.max(4, size * (0.45 + spacingRatio * 1.6))
+      : Math.max(1.5, size * spacingRatio * 0.45);
 
-  document.querySelectorAll('.stamp-btn').forEach(btn => {
-    btn.onclick = () => {
-      let emoji = btn.dataset.stamp === 'lotus' ? '🪷' : btn.dataset.stamp === 'diya' ? '🪔' : '🦚';
-      strokes.push({ x: 0, y: -120, color: brushColor, size: 14, type: 'stamp', emoji });
-      draw();
-      playSound('chime');
-      toast('Placed ' + btn.dataset.stamp + ' stamp');
+    if (dist + distAccum >= step) {
+      const steps = Math.floor((dist + distAccum) / step);
+      for (let s = 1; s <= steps; s++) {
+        const t = s / steps;
+        const ix = lastPt.x + dx * t;
+        const iy = lastPt.y + dy * t;
+        renderSymmetricalDab(ix, iy, lastPt.x, lastPt.y);
+      }
+      distAccum = 0;
+      lastPt = pt;
+      compositeRangoli();
+    }
+  };
+
+  const finishStroke = () => {
+    if (!drawing) return;
+    drawing = false;
+    saveSnapshot();
+  };
+  c.onpointerup = finishStroke;
+  c.onpointercancel = finishStroke;
+
+  // Controls
+  $('#rEraserBtn').onclick = () => {
+    isEraser = !isEraser;
+    $('#rEraserBtn').classList.toggle('active', isEraser);
+    updateStatus();
+  };
+  $('#rGuidesBtn').onclick = () => {
+    showGuides = !showGuides;
+    $('#rGuidesBtn').textContent = showGuides ? '◎ Guides: On' : '◎ Guides: Off';
+    compositeRangoli();
+  };
+  $('#rMirrorBtn').onclick = () => {
+    mirrorSym = !mirrorSym;
+    $('#rMirrorBtn').textContent = mirrorSym ? '⇄ Mirror: On' : '⇄ Mirror: Off';
+  };
+  $('#rSym').onchange = () => {
+    updateStatus();
+    compositeRangoli();
+  };
+
+  $('#rUndo').onclick = () => {
+    if (history.length <= 1) return;
+    redoStack.push(history.pop());
+    restoreSnapshot(history[history.length - 1]);
+  };
+  $('#rRedo').onclick = () => {
+    if (!redoStack.length) return;
+    const next = redoStack.pop();
+    history.push(next);
+    restoreSnapshot(next);
+  };
+  $('#rClear').onclick = () => {
+    if (!confirm('Clear the entire Rangoli canvas?')) return;
+    pCtx.clearRect(0, 0, w, h);
+    saveSnapshot();
+    compositeRangoli();
+  };
+
+  $('#rGenerate').onclick = () => {
+    pCtx.clearRect(0, 0, w, h);
+    const pal = CURATED_PALETTES['Vibrant Festival'];
+    const prevBrush = currentBrush;
+    const prevColor = brushColor;
+    const prevSize = $('#rSize').value;
+
+    ['mandala', 'lotus', 'floral', 'border'].forEach((pat, idx) => {
+      brushColor = pal[idx % pal.length];
+      stampRangoliPattern(pat);
+    });
+
+    for (let ring = 0; ring < 5; ring++) {
+      const r = 52 + ring * 46;
+      brushColor = pal[(ring + 2) % pal.length];
+      currentBrush = ring % 2 === 0 ? 'dotted' : 'sparkle';
+      $('#rSize').value = 8 + (ring % 3) * 3;
+      renderSymmetricalDab(0, r, 0, r);
+      renderSymmetricalDab(r * 0.4, r * 0.85, r * 0.4, r * 0.85);
+    }
+
+    currentBrush = prevBrush;
+    brushColor = prevColor;
+    $('#rSize').value = prevSize;
+    saveSnapshot();
+    compositeRangoli();
+    toast('Festive Rangoli generated');
+  };
+
+  // Background color controls
+  $$('.r-bg-preset').forEach(b => {
+    b.onclick = () => {
+      bgColor = b.dataset.bg;
+      $('#rBgColor').value = bgColor;
+      compositeRangoli();
     };
   });
-
-  $('#rSym').onchange = draw;
-  $('#rTexture').onchange = draw;
-  $('#rUndo').onclick = () => { if(strokes.length) { redo.push(strokes.pop()); draw(); playSound('pop'); } };
-  $('#rRedo').onclick = () => { if(redo.length) { strokes.push(redo.pop()); draw(); playSound('pop'); } };
-  $('#rClear').onclick = () => { strokes = []; redo = []; draw(); playSound('pop'); };
-  
-  $('#rGenerate').onclick = () => {
-    strokes = []; redo = [];
-    let n = +$('#rSym').value;
-    for (let ring = 1; ring <= 5; ring++) {
-      let radius = ring * 48;
-      for (let i = 0; i < n; i++) {
-        let a = i * 2 * Math.PI / n;
-        strokes.push({ x: Math.cos(a)*radius, y: Math.sin(a)*radius, color: palettes[i % palettes.length].hex, size: 7, type: 'dot' });
-      }
-    }
-    draw();
-    playSound('chime');
-    toast('Generated symmetrical rangoli pattern!');
+  $('#rBgColor').oninput = e => {
+    bgColor = e.target.value;
+    compositeRangoli();
   };
 
-  $('#rSave').onclick = () => saveImage(c.toDataURL('image/png'), 'Rangoli Studio Masterpiece');
-  $('#rDownload').onclick = () => downloadData(c.toDataURL('image/png'), 'deepavali-rangoli.png');
-  draw();
+  // Zoom controls
+  const applyZoom = () => {
+    $('#rCanvasWrap').style.transform = `scale(${zoom})`;
+    $('#rZoomVal').textContent = Math.round(zoom * 100) + '%';
+  };
+  $('#rZoomIn').onclick = () => { zoom = clamp(zoom + 0.15, 0.6, 2.2); applyZoom(); };
+  $('#rZoomOut').onclick = () => { zoom = clamp(zoom - 0.15, 0.6, 2.2); applyZoom(); };
+  $('#rZoomReset').onclick = () => { zoom = 1; applyZoom(); };
+
+  // Export clean image without guide lines
+  function getCleanExportDataURL() {
+    const prevGuides = showGuides;
+    showGuides = false;
+    compositeRangoli();
+    const url = c.toDataURL('image/png');
+    showGuides = prevGuides;
+    compositeRangoli();
+    return url;
+  }
+
+  $('#rSave').onclick = () => saveImage(getCleanExportDataURL(), 'Rangoli Studio Art');
+  $('#rDownload').onclick = () => downloadData(getCleanExportDataURL(), 'deepavali-rangoli.png');
+
+  saveSnapshot();
+  compositeRangoli();
 }
 
 /* ==========================================
-   2. DIYAVERSE (Upgraded Realistic Diya Designer)
+   2. DIYAVERSE — CUSTOMIZATION EXPANSION
    ========================================== */
+const DIYA_DESIGNS = [
+  { id: 'clay', name: 'Traditional Clay', icon: '🪔' },
+  { id: 'decorated', name: 'Decorated Clay', icon: '🏵' },
+  { id: 'golden', name: 'Golden Diya', icon: '👑' },
+  { id: 'silver', name: 'Silver Diya', icon: '🌙' },
+  { id: 'floating', name: 'Floating Lotus', icon: '🪷' }
+];
+
+const FLAME_STYLES = [
+  { id: 'classic', name: 'Classic Flame' },
+  { id: 'dancing', name: 'Dancing Flame' },
+  { id: 'steady', name: 'Steady Flame' },
+  { id: 'soft', name: 'Soft Glowing' }
+];
+
+const DECOR_FLOWERS = [
+  { id: 'marigold', name: 'Marigold Bloom', icon: '🌼' },
+  { id: 'rose', name: 'Rose Petals', icon: '🌺' },
+  { id: 'lotus', name: 'Sacred Lotus', icon: '🪷' },
+  { id: 'garland', name: 'Flower Garland', icon: '〰' }
+];
+
 function buildDiya() {
   body.innerHTML = `
-    <div class="toolrow">
-      <button id="addDiya">＋ Add Diya</button>
-      <button id="patternDiya">Create Diya Circle</button>
-      <button id="clearDiya">Clear Scene</button>
-      <button id="saveDiya">Save Scene</button>
-      <label>Size <input id="diyaSize" type="range" min="50" max="120" value="84"></label>
-      <div class="diya-type">
-        <button class="selected" data-dtype="terracotta">Terracotta</button>
-        <button data-dtype="brass">Royal Brass</button>
-        <button data-dtype="lotus">Lotus Diya</button>
-        <button data-dtype="multi">Multi-Wick</button>
+    <div class="studio-shell">
+      <div class="studio-topbar">
+        <div class="toolbar-group">
+          <button type="button" class="btn btn-gold" id="addDiya">＋ Add Diya</button>
+          <button type="button" class="btn" id="dupDiya" title="Duplicate selected item">⧉ Duplicate</button>
+          <button type="button" class="btn btn-danger" id="delDiya" title="Remove selected item">✕ Remove Selected</button>
+          <span class="toolbar-divider"></span>
+          <label style="font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px">
+            Arrangement
+            <select id="diyaPatternSelect" class="btn">
+              <option value="mandala">Sacred Mandala Circle</option>
+              <option value="lotus">Lotus Formation</option>
+              <option value="pathway">Temple Pathway</option>
+              <option value="spiral">Galaxy Spiral</option>
+              <option value="arch">Festive Arch</option>
+            </select>
+          </label>
+          <button type="button" class="btn" id="patternDiya">Apply Pattern</button>
+        </div>
+        <div class="toolbar-group">
+          <button type="button" class="btn btn-danger" id="clearDiya">🗑 Clear Scene</button>
+          <button type="button" class="btn btn-gold" id="saveDiya">★ Save Scene</button>
+          <button type="button" class="btn" id="downloadDiya">↓ Export PNG</button>
+        </div>
+      </div>
+
+      <div class="studio-grid">
+        <!-- LEFT PANEL: Diya Designs & Floral Decor -->
+        <aside class="studio-panel">
+          <div class="panel-section">
+            <h3 class="panel-title">Diya Designs <span class="sub">5 Styles</span></h3>
+            <div class="preset-grid" id="diyaDesignGrid"></div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Flame Style</h3>
+            <div class="preset-grid" id="diyaFlameGrid"></div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Flower Decorations</h3>
+            <p style="font-size:11px;color:var(--muted);margin:0 0 8px">Click a floral element to add it to your arrangement, or switch to Flower placement mode.</p>
+            <div class="preset-grid" id="diyaFlowerGrid"></div>
+          </div>
+        </aside>
+
+        <!-- CENTER: Interactive Diya Stage -->
+        <div class="studio-stage" style="padding:10px">
+          <div class="diya-stage" id="diyaStage">
+            <div class="diya-water-ripples"></div>
+            <div class="diya-ground"></div>
+            <div class="diya-count" id="diyaCount">0 diyas placed</div>
+          </div>
+          <div class="stage-footer">
+            <span id="diyaHintText">Click empty space to place a diya · Drag any diya to move · Click a diya to customize or resize.</span>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: Diya & Flame Customization -->
+        <aside class="studio-panel">
+          <div class="panel-section">
+            <h3 class="panel-title">Diya &amp; Flame Settings</h3>
+            <div class="slider-row">
+              <div class="slider-head"><span>Diya Size</span><span class="slider-val" id="diyaSizeVal">82 px</span></div>
+              <input id="diyaSize" type="range" min="44" max="135" value="82">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Flame Size</span><span class="slider-val" id="flameSizeVal">100%</span></div>
+              <input id="flameSize" type="range" min="55" max="160" value="100">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Flame Glow Radius</span><span class="slider-val" id="flameGlowVal">65%</span></div>
+              <input id="flameGlow" type="range" min="15" max="100" value="65">
+            </div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Flame Colour</h3>
+            <div class="swatches-grid" id="flameColorSwatches" style="margin-bottom:8px"></div>
+            <label style="font-size:11.5px;color:var(--muted);display:flex;align-items:center;justify-content:space-between">
+              <span>Custom Flame Tint</span>
+              <input type="color" id="flameCustomColor" value="#ffbe42" style="width:34px;height:28px;border:0;background:none;cursor:pointer">
+            </label>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Quick Flower Ring</h3>
+            <button type="button" class="btn" id="addFlowerRingBtn" style="width:100%">🌼 Surround with Marigold Ring</button>
+          </div>
+        </aside>
       </div>
     </div>
-    <div class="stage">
-      <div class="diya-stage" id="diyaStage">
-        <div class="diya-ground"></div>
-        <div class="diya-count" id="diyaCount">0 diyas placed</div>
-      </div>
-    </div>
-    <div class="hint">Place detailed terracotta, brass and lotus diyas with animated flickering flames and warm lighting. Click any diya to remove it.</div>`;
+  `;
 
-  const s = $('#diyaStage');
-  let count = 0, type = 'terracotta';
+  const stage = $('#diyaStage');
+  let items = [];
+  let selectedId = null;
+  let currentDesign = 'clay';
+  let currentFlameStyle = 'classic';
+  let currentFlameColor = '#ffbe42';
 
-  const getDiyaSVG = (kind) => {
-    if (kind === 'brass') {
-      return `<svg viewBox="0 0 100 90" style="overflow:visible">
-        <defs>
-          <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe699"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#8a7318"/></linearGradient>
-          <radialGradient id="flame" cx="50%" cy="80%" r="60%"><stop stop-color="#ffffff"/><stop offset=".3" stop-color="#ffdf6d"/><stop offset="1" stop-color="#ff6b00"/></radialGradient>
-        </defs>
-        <ellipse cx="50" cy="55" rx="46" ry="24" fill="url(#brass)" stroke="#fff2b3" stroke-width="1.5"/>
-        <path d="M10 52 Q50 82 90 52 L82 62 Q50 88 18 62Z" fill="url(#brass)"/>
-        <path d="M50 32 C35 18 42 4 50 0 C58 4 65 18 50 32Z" fill="url(#flame)" filter="drop-shadow(0 0 12px #ffbb33)"/>
-      </svg>`;
-    } else if (kind === 'lotus') {
-      return `<svg viewBox="0 0 100 90" style="overflow:visible">
-        <defs>
-          <linearGradient id="lotusPink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff99bb"/><stop offset="1" stop-color="#b82355"/></linearGradient>
-          <radialGradient id="flame" cx="50%" cy="80%" r="60%"><stop stop-color="#ffffff"/><stop offset=".3" stop-color="#ffdc5e"/><stop offset="1" stop-color="#ff5500"/></radialGradient>
-        </defs>
-        <path d="M20 60 Q50 30 80 60 Q65 75 50 70 Q35 75 20 60Z" fill="url(#lotusPink)" stroke="#ffcce0" stroke-width="1.5"/>
-        <path d="M35 65 Q50 20 65 65" fill="none" stroke="#ffe6f0" stroke-width="2"/>
-        <path d="M50 35 C36 20 44 6 50 2 C56 6 64 20 50 35Z" fill="url(#flame)" filter="drop-shadow(0 0 12px #ff9933)"/>
-      </svg>`;
-    } else if (kind === 'multi') {
-      return `<svg viewBox="0 0 100 90" style="overflow:visible">
-        <defs>
-          <linearGradient id="terracotta" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffb366"/><stop offset="1" stop-color="#8a3b14"/></linearGradient>
-          <radialGradient id="flame" cx="50%" cy="80%" r="60%"><stop stop-color="#ffffff"/><stop offset=".3" stop-color="#ffdc5e"/><stop offset="1" stop-color="#ff5500"/></radialGradient>
-        </defs>
-        <ellipse cx="50" cy="55" rx="44" ry="22" fill="url(#terracotta)" stroke="#ffcca3" stroke-width="1.5"/>
-        <path d="M50 30 C38 16 43 4 50 1 C57 4 62 16 50 30Z" fill="url(#flame)" filter="drop-shadow(0 0 10px #ff9933)"/>
-        <path d="M25 40 C20 28 26 16 30 14 C34 16 33 28 25 40Z" fill="url(#flame)" transform="scale(0.7) translate(15,10)" filter="drop-shadow(0 0 8px #ff9933)"/>
-        <path d="M75 40 C80 28 74 16 70 14 C66 16 67 28 75 40Z" fill="url(#flame)" transform="scale(0.7) translate(40,10)" filter="drop-shadow(0 0 8px #ff9933)"/>
-      </svg>`;
-    } else {
-      // Classic Terracotta
-      return `<svg viewBox="0 0 100 90" style="overflow:visible">
-        <defs>
-          <linearGradient id="clay" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7c56a"/><stop offset=".5" stop-color="#d87936"/><stop offset="1" stop-color="#79351f"/></linearGradient>
-          <radialGradient id="flame" cx="50%" cy="80%" r="60%"><stop stop-color="#ffffff"/><stop offset=".3" stop-color="#ffdc5e"/><stop offset="1" stop-color="#ff6b00"/></radialGradient>
-        </defs>
-        <path d="M10 45 Q50 78 90 45 Q80 70 50 70 Q20 70 10 45Z" fill="url(#clay)" stroke="#ffdb91" stroke-width="1.5"/>
-        <ellipse cx="50" cy="45" rx="40" ry="14" fill="#522013"/>
-        <path d="M50 30 C32 16 45 2 51 -2 C63 13 65 21 50 30Z" fill="url(#flame)" filter="drop-shadow(0 0 14px #ff9e3d)"/>
-        <path d="M50 25 C45 16 50 9 52 7 C57 16 55 21 50 25Z" fill="#fff9d5"/>
-      </svg>`;
-    }
-  };
-
-  function update() { $('#diyaCount').textContent = count + ' handcrafted diyas'; }
-
-  function add(x, y, kind = type) {
-    let d = document.createElement('div');
-    d.className = 'diya';
-    d.style.left = x + '%';
-    d.style.top = y + '%';
-    d.style.width = $('#diyaSize').value + 'px';
-    d.innerHTML = getDiyaSVG(kind);
-    d.onclick = e => {
-      e.stopPropagation();
-      d.remove();
-      count--;
-      update();
-      playSound('pop');
+  const flamePresets = ['#ffbe42', '#ff7b29', '#fff3a8', '#ff4d88', '#38d9a9', '#4cc9f0', '#b58af2', '#70e000'];
+  const fSwatches = $('#flameColorSwatches');
+  fSwatches.innerHTML = flamePresets.map(c => `<button type="button" class="swatch-btn ${c === currentFlameColor ? 'active' : ''}" style="background:${c}" data-fcol="${c}"></button>`).join('');
+  fSwatches.querySelectorAll('[data-fcol]').forEach(b => {
+    b.onclick = () => {
+      currentFlameColor = b.dataset.fcol;
+      $('#flameCustomColor').value = currentFlameColor;
+      fSwatches.querySelectorAll('[data-fcol]').forEach(x => x.classList.toggle('active', x === b));
+      applyToSelected(it => { it.flameColor = currentFlameColor; });
     };
-    s.append(d);
-    count++;
-    update();
-    playSound('chime');
-  }
-
-  s.onclick = e => {
-    if (e.target.closest('.diya-count')) return;
-    let r = s.getBoundingClientRect();
-    add((e.clientX - r.left) / r.width * 100, (e.clientY - r.top) / r.height * 100);
+  });
+  $('#flameCustomColor').oninput = e => {
+    currentFlameColor = e.target.value;
+    applyToSelected(it => { it.flameColor = currentFlameColor; });
   };
 
-  $('#addDiya').onclick = () => add(25 + Math.random() * 50, 30 + Math.random() * 40);
-
-  document.querySelectorAll('[data-dtype]').forEach(b => b.onclick = () => {
-    type = b.dataset.dtype;
-    document.querySelectorAll('[data-dtype]').forEach(x => x.classList.toggle('selected', x === b));
-    toast(type[0].toUpperCase() + type.slice(1) + ' diya selected');
+  // Render Diya Design Buttons
+  const dGrid = $('#diyaDesignGrid');
+  dGrid.innerHTML = DIYA_DESIGNS.map(d => `
+    <button type="button" class="preset-btn ${d.id === currentDesign ? 'active' : ''}" data-dtype="${d.id}">
+      <span class="preset-icon">${d.icon}</span>
+      <span>${d.name}</span>
+    </button>
+  `).join('');
+  dGrid.querySelectorAll('[data-dtype]').forEach(b => {
+    b.onclick = () => {
+      currentDesign = b.dataset.dtype;
+      dGrid.querySelectorAll('[data-dtype]').forEach(x => x.classList.toggle('active', x === b));
+      applyToSelected(it => { if (it.category === 'diya') it.design = currentDesign; });
+    };
   });
 
-  $('#patternDiya').onclick = () => {
-    s.querySelectorAll('.diya').forEach(x => x.remove());
-    count = 0;
-    for (let i = 0; i < 10; i++) {
-      let a = i * Math.PI / 5;
-      add(50 + 32 * Math.cos(a), 50 + 32 * Math.sin(a), i % 2 === 0 ? type : 'brass');
+  // Render Flame Style Buttons
+  const fGrid = $('#diyaFlameGrid');
+  fGrid.innerHTML = FLAME_STYLES.map(f => `
+    <button type="button" class="preset-btn ${f.id === currentFlameStyle ? 'active' : ''}" data-fstyle="${f.id}">
+      <span>${f.name}</span>
+    </button>
+  `).join('');
+  fGrid.querySelectorAll('[data-fstyle]').forEach(b => {
+    b.onclick = () => {
+      currentFlameStyle = b.dataset.fstyle;
+      fGrid.querySelectorAll('[data-fstyle]').forEach(x => x.classList.toggle('active', x === b));
+      applyToSelected(it => { if (it.category === 'diya') it.flameStyle = currentFlameStyle; });
+    };
+  });
+
+  // Render Flower Decor Buttons
+  const flGrid = $('#diyaFlowerGrid');
+  flGrid.innerHTML = DECOR_FLOWERS.map(fl => `
+    <button type="button" class="preset-btn" data-fltype="${fl.id}">
+      <span class="preset-icon">${fl.icon}</span>
+      <span>${fl.name}</span>
+    </button>
+  `).join('');
+  flGrid.querySelectorAll('[data-fltype]').forEach(b => {
+    b.onclick = () => {
+      addDiyaItem({
+        category: 'flower',
+        flowerType: b.dataset.fltype,
+        x: 25 + Math.random() * 50,
+        y: 35 + Math.random() * 45,
+        size: 54
+      });
+    };
+  });
+
+  function buildDiyaSVG(item) {
+    const uid = item.id;
+    if (item.category === 'flower') {
+      if (item.flowerType === 'marigold') {
+        return `<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="#ff7b00" opacity="0.9"/><circle cx="30" cy="30" r="18" fill="#ffa200"/><circle cx="30" cy="30" r="11" fill="#ffd000"/><circle cx="30" cy="30" r="5" fill="#d94e00"/></svg>`;
+      }
+      if (item.flowerType === 'rose') {
+        return `<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="22" fill="#c9184a"/><circle cx="26" cy="26" r="14" fill="#ff4d6d"/><circle cx="33" cy="32" r="10" fill="#ff758f"/><circle cx="30" cy="30" r="5" fill="#ffb3c1"/></svg>`;
+      }
+      if (item.flowerType === 'lotus') {
+        return `<svg viewBox="0 0 70 60"><path d="M35 8 Q48 25 35 50 Q22 25 35 8Z" fill="#ff8fa3"/><path d="M35 50 Q58 32 56 16 Q40 24 35 50Z" fill="#ff4d6d"/><path d="M35 50 Q12 32 14 16 Q30 24 35 50Z" fill="#ff4d6d"/><circle cx="35" cy="38" r="6" fill="#ffd166"/></svg>`;
+      }
+      return `<svg viewBox="0 0 110 36"><circle cx="18" cy="18" r="10" fill="#ff9f1c"/><circle cx="38" cy="21" r="9" fill="#ffbf69"/><circle cx="56" cy="22" r="10" fill="#ff5400"/><circle cx="74" cy="21" r="9" fill="#ffbf69"/><circle cx="92" cy="18" r="10" fill="#ff9f1c"/></svg>`;
     }
-    add(50, 50, 'lotus');
-    toast('Diya mandala created!');
+
+    const fScale = (item.flameSize || 100) / 100;
+    const fCol = item.flameColor || '#ffbe42';
+    const glowOp = ((item.flameGlow || 65) / 100) * 0.42;
+    const fClass = `flame-${item.flameStyle || 'classic'}`;
+
+    let bodyMarkup = '';
+    switch (item.design) {
+      case 'decorated':
+        bodyMarkup = `
+          <path d="M7 36 Q50 70 93 36 Q84 63 50 63 Q16 63 7 36Z" fill="url(#clay-${uid})" stroke="#ffe194" stroke-width="2"/>
+          <path d="M12 37 Q50 53 88 37" fill="none" stroke="#ffeaad" stroke-width="3"/>
+          <circle cx="24" cy="48" r="3" fill="#00f5d4"/><circle cx="37" cy="52" r="3.2" fill="#ff4d6d"/>
+          <circle cx="50" cy="54" r="3.5" fill="#fff3b0"/><circle cx="63" cy="52" r="3.2" fill="#ff4d6d"/>
+          <circle cx="76" cy="48" r="3" fill="#00f5d4"/>
+        `;
+        break;
+      case 'golden':
+        bodyMarkup = `
+          <path d="M6 33 Q50 72 94 33 L83 56 Q50 72 17 56Z" fill="url(#gold-${uid})" stroke="#fff3b0" stroke-width="2"/>
+          <path d="M16 39 Q50 56 84 39" stroke="#fff6cc" stroke-width="2.5" fill="none"/>
+          <circle cx="28" cy="45" r="3" fill="#ffffff"/><circle cx="50" cy="50" r="3.5" fill="#ffffff"/><circle cx="72" cy="45" r="3" fill="#ffffff"/>
+        `;
+        break;
+      case 'silver':
+        bodyMarkup = `
+          <path d="M8 34 Q50 69 92 34 L82 55 Q50 69 18 55Z" fill="url(#silver-${uid})" stroke="#ffffff" stroke-width="2"/>
+          <path d="M18 40 Q50 54 82 40" stroke="#e2f1ff" stroke-width="2.5" fill="none"/>
+          <circle cx="32" cy="46" r="2.8" fill="#80ffdb"/><circle cx="50" cy="50" r="3.2" fill="#72efdd"/><circle cx="68" cy="46" r="2.8" fill="#80ffdb"/>
+        `;
+        break;
+      case 'floating':
+        bodyMarkup = `
+          <ellipse cx="50" cy="54" rx="45" ry="11" fill="#4cc9f0" opacity="0.35" stroke="#a9def9" stroke-width="1.5"/>
+          <path d="M10 40 Q20 12 38 28 Q50 6 62 28 Q80 12 90 40 Q76 62 50 62 Q24 62 10 40Z" fill="url(#lotus-${uid})" stroke="#ffc8dd" stroke-width="1.8"/>
+          <path d="M18 42 Q50 54 82 42" fill="none" stroke="#fff0f3" stroke-width="2.2"/>
+        `;
+        break;
+      default: // Traditional clay
+        bodyMarkup = `
+          <path d="M7 35 Q50 68 93 35 Q85 62 50 62 Q15 62 7 35Z" fill="url(#clay-${uid})" stroke="#ffdb91" stroke-width="2"/>
+          <path d="M12 36 Q50 51 88 36" fill="none" stroke="#ffe5a8" stroke-width="2.8"/>
+          <path d="M24 46 Q50 55 76 46" fill="none" stroke="#9e4722" stroke-width="2"/>
+        `;
+    }
+
+    return `
+      <svg viewBox="0 0 100 84" aria-hidden="true">
+        <defs>
+          <linearGradient id="clay-${uid}" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f7be6d"/>
+            <stop offset="50%" stop-color="#cc6b2c"/>
+            <stop offset="100%" stop-color="#6e2c18"/>
+          </linearGradient>
+          <linearGradient id="gold-${uid}" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff4b8"/>
+            <stop offset="45%" stop-color="#e3a839"/>
+            <stop offset="100%" stop-color="#7d4e12"/>
+          </linearGradient>
+          <linearGradient id="silver-${uid}" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="50%" stop-color="#b0c0d0"/>
+            <stop offset="100%" stop-color="#586574"/>
+          </linearGradient>
+          <linearGradient id="lotus-${uid}" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff9ebb"/>
+            <stop offset="55%" stop-color="#e84a7f"/>
+            <stop offset="100%" stop-color="#8c1c46"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="50" cy="44" rx="${44 * (item.flameGlow / 65)}" ry="${30 * (item.flameGlow / 65)}" fill="${fCol}" opacity="${glowOp}"/>
+        <g class="${fClass}" style="transform: translate(50px, 33px) scale(${fScale}) translate(-50px, -33px)">
+          <path d="M50 33 C32 18 45 2 50 -2 C62 14 65 24 50 33Z" fill="${fCol}" stroke="#fff6c2" stroke-width="1.3"/>
+          <path d="M50 29 C43 19 49 10 51 7 C57 18 56 25 50 29Z" fill="#fffdf0"/>
+        </g>
+        ${bodyMarkup}
+      </svg>
+    `;
+  }
+
+  function updateCounter() {
+    const diyaTotal = items.filter(i => i.category === 'diya').length;
+    const flowerTotal = items.filter(i => i.category === 'flower').length;
+    $('#diyaCount').textContent = `${diyaTotal} diyas · ${flowerTotal} flowers`;
+  }
+
+  function selectItem(id) {
+    selectedId = id;
+    stage.querySelectorAll('.diya-item').forEach(el => {
+      el.classList.toggle('selected', el.dataset.id == id);
+    });
+    const item = items.find(i => i.id == id);
+    if (item) {
+      $('#diyaSize').value = item.size;
+      $('#diyaSizeVal').textContent = item.size + ' px';
+      if (item.category === 'diya') {
+        $('#flameSize').value = item.flameSize;
+        $('#flameSizeVal').textContent = item.flameSize + '%';
+        $('#flameGlow').value = item.flameGlow;
+        $('#flameGlowVal').textContent = item.flameGlow + '%';
+      }
+    }
+  }
+
+  function applyToSelected(mutator) {
+    if (!selectedId) return;
+    const item = items.find(i => i.id == selectedId);
+    if (!item) return;
+    mutator(item);
+    const dom = stage.querySelector(`.diya-item[data-id="${item.id}"]`);
+    if (dom) {
+      dom.style.width = item.size + 'px';
+      dom.style.height = (item.size * 0.72) + 'px';
+      dom.innerHTML = buildDiyaSVG(item);
+    }
+  }
+
+  function addDiyaItem(opts = {}) {
+    const item = {
+      id: Date.now() + Math.floor(Math.random() * 100000),
+      category: opts.category || 'diya',
+      design: opts.design || currentDesign,
+      flowerType: opts.flowerType || 'marigold',
+      flameStyle: opts.flameStyle || currentFlameStyle,
+      flameColor: opts.flameColor || currentFlameColor,
+      flameSize: opts.flameSize || +$('#flameSize').value,
+      flameGlow: opts.flameGlow || +$('#flameGlow').value,
+      size: opts.size || +$('#diyaSize').value,
+      x: clamp(opts.x ?? 50, 6, 94),
+      y: clamp(opts.y ?? 55, 10, 92)
+    };
+    items.push(item);
+
+    const el = document.createElement('div');
+    el.className = 'diya-item diya';
+    el.dataset.id = item.id;
+    el.style.left = item.x + '%';
+    el.style.top = item.y + '%';
+    el.style.width = item.size + 'px';
+    el.style.height = (item.size * 0.72) + 'px';
+    el.innerHTML = buildDiyaSVG(item);
+
+    let dragging = false;
+    let moved = false;
+    el.onpointerdown = e => {
+      e.stopPropagation();
+      selectItem(item.id);
+      dragging = true;
+      moved = false;
+      el.setPointerCapture(e.pointerId);
+    };
+    el.onpointermove = e => {
+      if (!dragging) return;
+      moved = true;
+      const r = stage.getBoundingClientRect();
+      item.x = clamp(((e.clientX - r.left) / r.width) * 100, 4, 96);
+      item.y = clamp(((e.clientY - r.top) / r.height) * 100, 8, 94);
+      el.style.left = item.x + '%';
+      el.style.top = item.y + '%';
+    };
+    el.onpointerup = el.onpointercancel = e => {
+      e.stopPropagation();
+      dragging = false;
+    };
+    el.ondblclick = e => {
+      e.stopPropagation();
+      removeItem(item.id);
+    };
+
+    stage.appendChild(el);
+    selectItem(item.id);
+    updateCounter();
+    return item;
+  }
+
+  function removeItem(id) {
+    items = items.filter(i => i.id != id);
+    const dom = stage.querySelector(`.diya-item[data-id="${id}"]`);
+    if (dom) dom.remove();
+    if (selectedId == id) selectedId = null;
+    updateCounter();
+  }
+
+  stage.onpointerdown = e => {
+    if (e.target.closest('.diya-item') || e.target.closest('.diya-count')) return;
+    const r = stage.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    const y = ((e.clientY - r.top) / r.height) * 100;
+    addDiyaItem({ x, y });
+  };
+
+  $('#addDiya').onclick = () => addDiyaItem({ x: 20 + Math.random() * 60, y: 25 + Math.random() * 60 });
+  $('#dupDiya').onclick = () => {
+    const src = items.find(i => i.id == selectedId);
+    if (!src) { toast('Select a diya or flower first'); return; }
+    addDiyaItem({ ...src, x: src.x + 6, y: src.y + 4 });
+  };
+  $('#delDiya').onclick = () => {
+    if (!selectedId) { toast('Click a diya to select it first'); return; }
+    removeItem(selectedId);
+  };
+
+  // Sliders
+  $('#diyaSize').oninput = e => {
+    $('#diyaSizeVal').textContent = e.target.value + ' px';
+    applyToSelected(it => { it.size = +e.target.value; });
+  };
+  $('#flameSize').oninput = e => {
+    $('#flameSizeVal').textContent = e.target.value + '%';
+    applyToSelected(it => { it.flameSize = +e.target.value; });
+  };
+  $('#flameGlow').oninput = e => {
+    $('#flameGlowVal').textContent = e.target.value + '%';
+    applyToSelected(it => { it.flameGlow = +e.target.value; });
+  };
+
+  // Arrangement Patterns
+  function applyArrangement(pattern) {
+    stage.querySelectorAll('.diya-item').forEach(x => x.remove());
+    items = [];
+    selectedId = null;
+
+    if (pattern === 'mandala') {
+      for (let i = 0; i < 12; i++) {
+        const a = (i * Math.PI * 2) / 12;
+        addDiyaItem({
+          x: 50 + 33 * Math.cos(a),
+          y: 52 + 33 * Math.sin(a),
+          design: i % 2 === 0 ? 'decorated' : 'clay',
+          size: 74
+        });
+      }
+      for (let i = 0; i < 8; i++) {
+        const a = (i * Math.PI * 2) / 8;
+        addDiyaItem({ category: 'flower', flowerType: 'marigold', x: 50 + 20 * Math.cos(a), y: 52 + 20 * Math.sin(a), size: 46 });
+      }
+      addDiyaItem({ x: 50, y: 52, design: 'golden', size: 96, flameSize: 120 });
+    } else if (pattern === 'lotus') {
+      const pts = [[50, 26], [35, 36], [65, 36], [26, 52], [74, 52], [36, 68], [64, 68], [50, 76]];
+      pts.forEach(([x, y]) => addDiyaItem({ x, y, design: 'floating', flameColor: '#ff758f', size: 78 }));
+      addDiyaItem({ x: 50, y: 51, design: 'golden', size: 94 });
+    } else if (pattern === 'pathway') {
+      for (let i = 0; i < 6; i++) {
+        const y = 26 + i * 12;
+        const spread = 14 + i * 4.5;
+        addDiyaItem({ x: 50 - spread, y, design: 'clay', size: 62 + i * 5 });
+        addDiyaItem({ x: 50 + spread, y, design: 'clay', size: 62 + i * 5 });
+      }
+    } else if (pattern === 'spiral') {
+      for (let i = 0; i < 14; i++) {
+        const a = i * 0.75;
+        const r = 6 + i * 2.5;
+        addDiyaItem({
+          x: 50 + Math.cos(a) * r,
+          y: 52 + Math.sin(a) * r,
+          design: DIYA_DESIGNS[i % DIYA_DESIGNS.length].id,
+          size: 64 + i * 2
+        });
+      }
+    } else if (pattern === 'arch') {
+      for (let i = 0; i <= 8; i++) {
+        const a = Math.PI + (i * Math.PI) / 8;
+        addDiyaItem({
+          x: 50 + 36 * Math.cos(a),
+          y: 72 + 42 * Math.sin(a),
+          design: i % 2 === 0 ? 'golden' : 'decorated',
+          size: 76
+        });
+      }
+    }
+  }
+
+  $('#patternDiya').onclick = () => applyArrangement($('#diyaPatternSelect').value);
+  $('#addFlowerRingBtn').onclick = () => {
+    for (let i = 0; i < 10; i++) {
+      const a = (i * Math.PI * 2) / 10;
+      addDiyaItem({
+        category: 'flower',
+        flowerType: i % 2 === 0 ? 'marigold' : 'rose',
+        x: 50 + 25 * Math.cos(a),
+        y: 52 + 25 * Math.sin(a),
+        size: 48
+      });
+    }
+    toast('Marigold & rose ring added');
   };
 
   $('#clearDiya').onclick = () => {
-    s.querySelectorAll('.diya').forEach(x => x.remove());
-    count = 0;
-    update();
-    playSound('pop');
+    stage.querySelectorAll('.diya-item').forEach(x => x.remove());
+    items = [];
+    selectedId = null;
+    updateCounter();
   };
 
-  $('#saveDiya').onclick = () => {
-    let c = document.createElement('canvas');
-    c.width = 900; c.height = 520;
-    let x = c.getContext('2d'), g = x.createLinearGradient(0, 0, 0, 520);
-    g.addColorStop(0, '#0a1020'); g.addColorStop(1, '#49301f');
-    x.fillStyle = g; x.fillRect(0, 0, 900, 520);
-    
-    s.querySelectorAll('.diya').forEach(d => {
-      let px = parseFloat(d.style.left) / 100 * 900, py = parseFloat(d.style.top) / 100 * 520;
+  function exportDiyaCanvas() {
+    const c = document.createElement('canvas');
+    c.width = 960;
+    c.height = 560;
+    const x = c.getContext('2d');
+    const g = x.createRadialGradient(480, 500, 30, 480, 320, 580);
+    g.addColorStop(0, '#6e3d22');
+    g.addColorStop(0.5, '#261b30');
+    g.addColorStop(1, '#070c1a');
+    x.fillStyle = g;
+    x.fillRect(0, 0, 960, 560);
+
+    items.forEach(it => {
+      const px = (it.x / 100) * 960;
+      const py = (it.y / 100) * 560;
+      const scale = it.size / 82;
       x.save();
-      x.shadowColor = '#ffad43'; x.shadowBlur = 28;
-      x.fillStyle = '#d87936';
-      x.beginPath(); x.ellipse(px, py + 7, 38, 17, 0, 0, Math.PI * 2); x.fill();
-      x.shadowBlur = 0;
-      x.fillStyle = '#ffd76b';
-      x.beginPath(); x.ellipse(px, py - 18, 7, 17, 0, 0, Math.PI * 2); x.fill();
+      if (it.category === 'flower') {
+        x.fillStyle = it.flowerType === 'rose' ? '#ff4d6d' : '#ff9f1c';
+        x.beginPath();
+        x.arc(px, py, 16 * scale, 0, Math.PI * 2);
+        x.fill();
+        x.fillStyle = '#ffd166';
+        x.beginPath();
+        x.arc(px, py, 7 * scale, 0, Math.PI * 2);
+        x.fill();
+      } else {
+        x.shadowColor = it.flameColor || '#ffad43';
+        x.shadowBlur = 32;
+        x.fillStyle = it.design === 'golden' ? '#e5a93c' : it.design === 'silver' ? '#b8c6d4' : it.design === 'floating' ? '#e84a7f' : '#d87936';
+        x.beginPath();
+        x.ellipse(px, py + 8 * scale, 36 * scale, 16 * scale, 0, 0, Math.PI * 2);
+        x.fill();
+        x.shadowBlur = 18;
+        x.fillStyle = it.flameColor || '#ffd76b';
+        x.beginPath();
+        x.ellipse(px, py - 16 * scale, 7 * scale * (it.flameSize / 100), 17 * scale * (it.flameSize / 100), 0, 0, Math.PI * 2);
+        x.fill();
+        x.fillStyle = '#fffdf0';
+        x.beginPath();
+        x.ellipse(px, py - 14 * scale, 3.5 * scale, 9 * scale, 0, 0, Math.PI * 2);
+        x.fill();
+      }
       x.restore();
     });
-    saveImage(c.toDataURL(), 'DiyaVerse Masterpiece');
-  };
+    return c.toDataURL('image/png');
+  }
+
+  $('#saveDiya').onclick = () => saveImage(exportDiyaCanvas(), 'DiyaVerse Arrangement');
+  $('#downloadDiya').onclick = () => downloadData(exportDiyaCanvas(), 'deepavali-diyaverse.png');
+
+  // Seed initial welcoming diya
+  addDiyaItem({ x: 50, y: 55, design: 'decorated', size: 90 });
 }
 
 /* ==========================================
-   3. LIGHT PAINTING (Advanced Upgraded)
+   3. LIGHT PAINTING — PROFESSIONAL LIGHT EFFECTS
    ========================================== */
-function buildPainting() {
-  const colours = ['#fff0a6', '#ffb347', '#ff6b6b', '#ff4f9a', '#d66efd', '#9b7bff', '#5c8dff', '#35d6ff', '#36e0c1', '#65e572', '#d8ff62', '#ffffff', '#f5c96b', '#e85d5d', '#b58af2', '#49b8c6', '#62bd83', '#f28d45'];
-  body.innerHTML = `
-    <div class="toolrow">
-      <button class="selected" data-brush="glow">Glow Trail</button>
-      <button data-brush="spark">Sparkle Stream</button>
-      <button data-brush="rainbow">Rainbow Stream</button>
-      <button data-brush="burst">Light Burst</button>
-      <label>Colour <input type="color" id="pColor" value="#f5c96b"></label>
-      <div class="mini-palette" id="pPalette"></div>
-      <label>Size <input type="range" id="pSize" min="2" max="40" value="14"></label>
-      <button id="pTextTool">Add Luminous Text</button>
-      <button id="pUndo">Undo</button>
-      <button id="pClear">Clear</button>
-      <button id="pSave">Save PNG</button>
-    </div>
-    <div class="stage">
-      <div class="canvas-wrap"><canvas id="paintCanvas"></canvas></div>
-    </div>
-    <div class="hint">Paint glowing light art, or click 'Add Luminous Text' to render glowing typography in the night sky.</div>`;
+const LIGHT_BRUSHES = [
+  { id: 'aurora', name: 'Aurora Curtain', icon: '🌌' },
+  { id: 'neon', name: 'Neon Laser', icon: '⚡' },
+  { id: 'firefly', name: 'Firefly Swarm', icon: '✨' },
+  { id: 'starlight', name: 'Starlight', icon: '✴' },
+  { id: 'plasma', name: 'Plasma Stream', icon: '🔮' },
+  { id: 'rainbow', name: 'Rainbow Prism', icon: '🌈' },
+  { id: 'goldspark', name: 'Golden Spark', icon: '🎇' },
+  { id: 'electric', name: 'Electric Blue', icon: '💠' },
+  { id: 'cosmic', name: 'Cosmic Dust', icon: '☄' },
+  { id: 'ribbon', name: 'Light Ribbon', icon: '🎗' }
+];
 
-  const c = $('#paintCanvas'), ctx = c.getContext('2d');
-  let w = 900, h = 530, dpr = Math.min(devicePixelRatio || 1, 2), mode = 'glow', paths = [], active = null;
-  c.width = w * dpr; c.height = h * dpr;
+function buildPainting() {
+  body.innerHTML = `
+    <div class="studio-shell">
+      <div class="studio-topbar">
+        <div class="toolbar-group">
+          <button type="button" class="btn" id="pUndo">↶ Undo</button>
+          <button type="button" class="btn" id="pRedo">↷ Redo</button>
+          <span class="toolbar-divider"></span>
+          <button type="button" class="btn" id="pEraserBtn">⌫ Eraser</button>
+          <button type="button" class="btn btn-danger" id="pClear">🗑 Clear Canvas</button>
+        </div>
+        <div class="toolbar-group">
+          <button type="button" class="btn btn-gold" id="pSave">★ Save to Gallery</button>
+          <button type="button" class="btn" id="pDownload">↓ Export PNG</button>
+        </div>
+      </div>
+
+      <div class="studio-grid">
+        <!-- LEFT PANEL: Light Brushes, Background & Layers -->
+        <aside class="studio-panel">
+          <div class="panel-section">
+            <h3 class="panel-title">Light Brushes <span class="sub">10 Effects</span></h3>
+            <div class="preset-grid" id="pBrushGrid"></div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Drawing Layers <span class="sub">3 Layers</span></h3>
+            <div class="layer-list" id="pLayerList"></div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Sky &amp; Background</h3>
+            <div class="preset-grid" style="margin-bottom:8px">
+              <button type="button" class="btn btn-sm p-bg-btn" data-bg="midnight">Midnight</button>
+              <button type="button" class="btn btn-sm p-bg-btn" data-bg="space">Deep Space</button>
+              <button type="button" class="btn btn-sm p-bg-btn" data-bg="sunset">Sunset</button>
+              <button type="button" class="btn btn-sm p-bg-btn" data-bg="black">Pure Black</button>
+            </div>
+            <label style="font-size:11.5px;color:var(--muted);display:flex;align-items:center;justify-content:space-between">
+              <span>Custom Background</span>
+              <input type="color" id="pCustomBg" value="#060916" style="width:34px;height:28px;border:0;background:none;cursor:pointer">
+            </label>
+          </div>
+        </aside>
+
+        <!-- CENTER: Light Painting Stage -->
+        <div class="studio-stage">
+          <div class="canvas-viewport">
+            <div class="canvas-wrap">
+              <canvas id="paintCanvas"></canvas>
+            </div>
+          </div>
+          <div class="stage-footer">
+            <span id="pStatusText">Brush: Aurora Curtain · Layer 1</span>
+            <span>Additive Light Blending Active</span>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: Light Physics Sliders & Colour Picker -->
+        <aside class="studio-panel">
+          <div class="panel-section">
+            <h3 class="panel-title">Light &amp; Particle Settings</h3>
+            <div class="slider-row">
+              <div class="slider-head"><span>Stroke Thickness</span><span class="slider-val" id="pSizeVal">14 px</span></div>
+              <input type="range" id="pSize" min="2" max="50" value="14">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Opacity</span><span class="slider-val" id="pOpacityVal">90%</span></div>
+              <input type="range" id="pOpacity" min="10" max="100" value="90">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Glow Intensity</span><span class="slider-val" id="pGlowVal">70%</span></div>
+              <input type="range" id="pGlow" min="0" max="100" value="70">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Particle Density</span><span class="slider-val" id="pDensityVal">50%</span></div>
+              <input type="range" id="pDensity" min="10" max="100" value="50">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Trail Length</span><span class="slider-val" id="pTrailVal">60%</span></div>
+              <input type="range" id="pTrail" min="10" max="100" value="60">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Fade Speed</span><span class="slider-val" id="pFadeVal">0% (Permanent)</span></div>
+              <input type="range" id="pFade" min="0" max="100" value="0">
+            </div>
+            <div class="slider-row">
+              <div class="slider-head"><span>Particle Size</span><span class="slider-val" id="pPartSizeVal">6 px</span></div>
+              <input type="range" id="pPartSize" min="1" max="20" value="6">
+            </div>
+          </div>
+
+          <div class="panel-section">
+            <h3 class="panel-title">Light Colour Studio</h3>
+            <div id="pColorPickerMount"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  `;
+
+  const c = $('#paintCanvas');
+  const ctx = c.getContext('2d');
+  const w = 900, h = 540;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  c.width = w * dpr;
+  c.height = h * dpr;
   ctx.scale(dpr, dpr);
 
-  function bg() {
-    ctx.fillStyle = '#080e1d';
+  // 3 Drawing Layers
+  const layers = [0, 1, 2].map(idx => {
+    const lc = document.createElement('canvas');
+    lc.width = w * dpr;
+    lc.height = h * dpr;
+    const lctx = lc.getContext('2d');
+    lctx.scale(dpr, dpr);
+    return { id: idx, name: `Layer ${idx + 1}`, canvas: lc, ctx: lctx, visible: true };
+  });
+  let activeLayerIdx = 0;
+
+  let currentBrush = 'aurora';
+  let isEraser = false;
+  let bgMode = 'midnight';
+  let customBgHex = '#060916';
+  let history = [];
+  let redoStack = [];
+  let hueTick = 0;
+
+  function saveLayerHistory() {
+    const snap = layers.map(l => {
+      const sc = document.createElement('canvas');
+      sc.width = l.canvas.width;
+      sc.height = l.canvas.height;
+      sc.getContext('2d').drawImage(l.canvas, 0, 0);
+      return sc;
+    });
+    history.push(snap);
+    if (history.length > 20) history.shift();
+    redoStack = [];
+  }
+
+  function restoreLayerHistory(snap) {
+    snap.forEach((sc, idx) => {
+      const l = layers[idx];
+      l.ctx.save();
+      l.ctx.setTransform(1, 0, 0, 1, 0, 0);
+      l.ctx.clearRect(0, 0, l.canvas.width, l.canvas.height);
+      l.ctx.drawImage(sc, 0, 0);
+      l.ctx.restore();
+    });
+    compositeLightScene();
+  }
+
+  function drawBackground() {
+    if (bgMode === 'midnight') {
+      const g = ctx.createLinearGradient(0, 0, 0, h);
+      g.addColorStop(0, '#050814');
+      g.addColorStop(1, '#101835');
+      ctx.fillStyle = g;
+    } else if (bgMode === 'space') {
+      const g = ctx.createRadialGradient(w / 2, h / 2, 40, w / 2, h / 2, 520);
+      g.addColorStop(0, '#160c2e');
+      g.addColorStop(0.6, '#090718');
+      g.addColorStop(1, '#020208');
+      ctx.fillStyle = g;
+    } else if (bgMode === 'sunset') {
+      const g = ctx.createLinearGradient(0, 0, 0, h);
+      g.addColorStop(0, '#1a0c2e');
+      g.addColorStop(0.6, '#4a1942');
+      g.addColorStop(1, '#893145');
+      ctx.fillStyle = g;
+    } else if (bgMode === 'black') {
+      ctx.fillStyle = '#000000';
+    } else {
+      ctx.fillStyle = customBgHex;
+    }
     ctx.fillRect(0, 0, w, h);
   }
-  bg();
 
-  function choose(col) {
-    $('#pColor').value = col;
-    $('#pPalette').querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.color === col));
-  }
-
-  $('#pPalette').innerHTML = colours.map(col => `<button data-color="${col}" style="background:${col}" aria-label="Choose ${col}"></button>`).join('');
-  $('#pPalette').querySelectorAll('button').forEach(b => b.onclick = () => choose(b.dataset.color));
-  $('#pColor').oninput = e => choose(e.target.value);
-  choose(colours[12]);
-
-  function point(e) {
-    let r = c.getBoundingClientRect();
-    return { x: (e.clientX - r.left) * w / r.width, y: (e.clientY - r.top) * h / r.height };
-  }
-
-  function redraw() {
-    bg();
-    paths.forEach(p => {
-      if (p.type === 'burst') {
-        p.dots.forEach(d => {
-          ctx.fillStyle = d.color;
-          ctx.shadowColor = d.color; ctx.shadowBlur = 14;
-          ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2); ctx.fill();
-        });
-        ctx.shadowBlur = 0;
-      } else if (p.type === 'text') {
-        ctx.save();
-        ctx.font = `bold ${p.size}px Georgia, serif`;
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 24;
-        ctx.textAlign = 'center';
-        ctx.fillText(p.text, p.x, p.y);
-        ctx.restore();
-      } else {
-        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-        for (let i = 1; i < p.points.length; i++) {
-          let a = p.points[i - 1], b = p.points[i];
-          ctx.strokeStyle = p.type === 'rainbow' ? `hsl(${(i * 9) % 360} 100% 68%)` : p.color;
-          ctx.lineWidth = p.size;
-          ctx.shadowColor = ctx.strokeStyle;
-          ctx.shadowBlur = p.type === 'spark' ? 26 : 18;
-          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-          if (p.type === 'spark' && i % 3 === 0) {
-            ctx.fillStyle = p.color;
-            ctx.beginPath(); ctx.arc(b.x, b.y, 2.5, 0, Math.PI * 2); ctx.fill();
-          }
-        }
-        ctx.shadowBlur = 0;
-      }
+  function compositeLightScene() {
+    ctx.clearRect(0, 0, w, h);
+    drawBackground();
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    layers.forEach(l => {
+      if (l.visible) ctx.drawImage(l.canvas, 0, 0);
     });
+    ctx.restore();
+  }
+
+  // Mount Brushes
+  const bGrid = $('#pBrushGrid');
+  bGrid.innerHTML = LIGHT_BRUSHES.map(b => `
+    <button type="button" class="preset-btn ${b.id === currentBrush ? 'active' : ''}" data-pbrush="${b.id}">
+      <span class="preset-icon">${b.icon}</span>
+      <span>${b.name}</span>
+    </button>
+  `).join('');
+
+  function updateStatus() {
+    const b = LIGHT_BRUSHES.find(x => x.id === currentBrush);
+    $('#pStatusText').textContent = isEraser
+      ? `Tool: Eraser · Layer ${activeLayerIdx + 1}`
+      : `Brush: ${b ? b.name : currentBrush} · Layer ${activeLayerIdx + 1}`;
+  }
+
+  bGrid.querySelectorAll('[data-pbrush]').forEach(btn => {
+    btn.onclick = () => {
+      isEraser = false;
+      $('#pEraserBtn').classList.remove('active');
+      currentBrush = btn.dataset.pbrush;
+      bGrid.querySelectorAll('[data-pbrush]').forEach(x => x.classList.toggle('active', x === btn));
+      updateStatus();
+    };
+  });
+
+  // Mount Layers UI
+  function renderLayersUI() {
+    const list = $('#pLayerList');
+    list.innerHTML = layers.map((l, idx) => `
+      <div class="layer-item ${idx === activeLayerIdx ? 'active' : ''}" data-lidx="${idx}">
+        <span>● ${l.name}</span>
+        <button type="button" class="btn btn-sm" data-lvis="${idx}">${l.visible ? '👁 Visible' : '🚫 Hidden'}</button>
+      </div>
+    `).join('');
+    list.querySelectorAll('[data-lidx]').forEach(row => {
+      row.onclick = e => {
+        if (e.target.closest('[data-lvis]')) return;
+        activeLayerIdx = +row.dataset.lidx;
+        renderLayersUI();
+        updateStatus();
+      };
+    });
+    list.querySelectorAll('[data-lvis]').forEach(btn => {
+      btn.onclick = e => {
+        e.stopPropagation();
+        const idx = +btn.dataset.lvis;
+        layers[idx].visible = !layers[idx].visible;
+        renderLayersUI();
+        compositeLightScene();
+      };
+    });
+  }
+  renderLayersUI();
+
+  // Mount Colour Picker
+  mountColorPicker($('#pColorPickerMount'), brushColor, col => {
+    brushColor = col;
+  });
+
+  // Bind Sliders
+  const bindS = (id, vId, fn) => {
+    const el = $(id), vEl = $(vId);
+    el.oninput = () => { vEl.textContent = fn(el.value); };
+  };
+  bindS('#pSize', '#pSizeVal', v => v + ' px');
+  bindS('#pOpacity', '#pOpacityVal', v => v + '%');
+  bindS('#pGlow', '#pGlowVal', v => v + '%');
+  bindS('#pDensity', '#pDensityVal', v => v + '%');
+  bindS('#pTrail', '#pTrailVal', v => v + '%');
+  bindS('#pFade', '#pFadeVal', v => (+v === 0 ? '0% (Permanent)' : v + '%'));
+  bindS('#pPartSize', '#pPartSizeVal', v => v + ' px');
+
+  // Background buttons
+  $$('.p-bg-btn').forEach(b => {
+    b.onclick = () => {
+      bgMode = b.dataset.bg;
+      compositeLightScene();
+    };
+  });
+  $('#pCustomBg').oninput = e => {
+    bgMode = 'custom';
+    customBgHex = e.target.value;
+    compositeLightScene();
+  };
+
+  // Optional Fade Speed animation loop
+  let fadeRaf = null;
+  function stepFade() {
+    const fadeVal = +$('#pFade')?.value || 0;
+    if (fadeVal > 0) {
+      const lctx = layers[activeLayerIdx].ctx;
+      lctx.save();
+      lctx.globalCompositeOperation = 'destination-out';
+      lctx.fillStyle = `rgba(0, 0, 0, ${fadeVal * 0.0012})`;
+      lctx.fillRect(0, 0, w, h);
+      lctx.restore();
+      compositeLightScene();
+    }
+    fadeRaf = requestAnimationFrame(stepFade);
+  }
+  fadeRaf = requestAnimationFrame(stepFade);
+  activeCleanup = () => { if (fadeRaf) cancelAnimationFrame(fadeRaf); };
+
+  // Paint a luminous segment on active layer
+  let recentPoints = [];
+  function renderLightSegment(p1, p2) {
+    const lctx = layers[activeLayerIdx].ctx;
+    const size = +$('#pSize').value;
+    const opacity = +$('#pOpacity').value / 100;
+    const glow = +$('#pGlow').value / 100;
+    const density = +$('#pDensity').value / 100;
+    const trail = +$('#pTrail').value / 100;
+    const partSize = +$('#pPartSize').value;
+
+    lctx.save();
+    if (isEraser) {
+      lctx.globalCompositeOperation = 'destination-out';
+      lctx.lineCap = 'round';
+      lctx.lineWidth = size * 1.6;
+      lctx.beginPath();
+      lctx.moveTo(p1.x, p1.y);
+      lctx.lineTo(p2.x, p2.y);
+      lctx.stroke();
+      lctx.restore();
+      return;
+    }
+
+    lctx.globalCompositeOperation = 'lighter';
+    lctx.globalAlpha = opacity;
+    lctx.lineCap = 'round';
+    lctx.lineJoin = 'round';
+    hueTick = (hueTick + 4) % 360;
+
+    const col = currentBrush === 'rainbow' ? `hsl(${hueTick}, 100%, 62%)`
+      : currentBrush === 'goldspark' ? '#ffd166'
+      : currentBrush === 'electric' ? '#00f5d4'
+      : brushColor;
+
+    lctx.shadowColor = col;
+    lctx.shadowBlur = glow * 34;
+
+    switch (currentBrush) {
+      case 'aurora': {
+        const curtains = Math.max(3, Math.floor(trail * 8));
+        for (let i = 0; i < curtains; i++) {
+          lctx.strokeStyle = col;
+          lctx.globalAlpha = opacity * (0.28 - i * 0.03);
+          lctx.lineWidth = Math.max(2, size * 0.45);
+          lctx.beginPath();
+          lctx.moveTo(p1.x, p1.y - i * 7);
+          lctx.lineTo(p2.x, p2.y - i * 7);
+          lctx.stroke();
+        }
+        break;
+      }
+      case 'neon':
+      case 'rainbow': {
+        lctx.strokeStyle = col;
+        lctx.lineWidth = size;
+        lctx.beginPath();
+        lctx.moveTo(p1.x, p1.y);
+        lctx.lineTo(p2.x, p2.y);
+        lctx.stroke();
+
+        lctx.strokeStyle = '#ffffff';
+        lctx.lineWidth = Math.max(1.5, size * 0.28);
+        lctx.beginPath();
+        lctx.moveTo(p1.x, p1.y);
+        lctx.lineTo(p2.x, p2.y);
+        lctx.stroke();
+        break;
+      }
+      case 'firefly': {
+        const count = Math.max(2, Math.floor(density * 10));
+        for (let i = 0; i < count; i++) {
+          const a = Math.random() * Math.PI * 2;
+          const r = Math.random() * size * 2.2;
+          const fx = p2.x + Math.cos(a) * r;
+          const fy = p2.y + Math.sin(a) * r;
+          lctx.fillStyle = i % 2 === 0 ? '#ffe875' : col;
+          lctx.beginPath();
+          lctx.arc(fx, fy, Math.max(1.2, partSize * 0.45), 0, Math.PI * 2);
+          lctx.fill();
+        }
+        break;
+      }
+      case 'starlight': {
+        lctx.strokeStyle = col;
+        lctx.lineWidth = Math.max(1.5, size * 0.35);
+        lctx.beginPath();
+        lctx.moveTo(p1.x, p1.y);
+        lctx.lineTo(p2.x, p2.y);
+        lctx.stroke();
+
+        if (Math.random() < density * 0.85) {
+          const sr = partSize * 2.2;
+          lctx.save();
+          lctx.translate(p2.x + (Math.random() - 0.5) * size, p2.y + (Math.random() - 0.5) * size);
+          lctx.strokeStyle = '#ffffff';
+          lctx.lineWidth = 1.4;
+          for (let k = 0; k < 4; k++) {
+            lctx.rotate(Math.PI / 4);
+            lctx.beginPath();
+            lctx.moveTo(-sr, 0);
+            lctx.lineTo(sr, 0);
+            lctx.stroke();
+          }
+          lctx.restore();
+        }
+        break;
+      }
+      case 'plasma': {
+        lctx.strokeStyle = col;
+        lctx.lineWidth = size * 0.65;
+        for (let t = -1; t <= 1; t += 2) {
+          const ox = (Math.random() - 0.5) * size * 1.2;
+          const oy = (Math.random() - 0.5) * size * 1.2;
+          lctx.beginPath();
+          lctx.moveTo(p1.x, p1.y);
+          lctx.quadraticCurveTo((p1.x + p2.x) / 2 + ox, (p1.y + p2.y) / 2 + oy, p2.x, p2.y);
+          lctx.stroke();
+        }
+        break;
+      }
+      case 'goldspark': {
+        const sparks = Math.max(4, Math.floor(density * 14));
+        for (let i = 0; i < sparks; i++) {
+          const a = Math.random() * Math.PI * 2;
+          const len = (0.3 + Math.random()) * size * (0.8 + trail);
+          lctx.strokeStyle = i % 3 === 0 ? '#ffffff' : i % 2 === 0 ? '#ffd166' : '#ff8800';
+          lctx.lineWidth = Math.max(1, partSize * 0.25);
+          lctx.beginPath();
+          lctx.moveTo(p2.x, p2.y);
+          lctx.lineTo(p2.x + Math.cos(a) * len, p2.y + Math.sin(a) * len);
+          lctx.stroke();
+        }
+        break;
+      }
+      case 'electric': {
+        lctx.strokeStyle = '#00bbf9';
+        lctx.lineWidth = Math.max(1.5, size * 0.35);
+        const midX = (p1.x + p2.x) / 2 + (Math.random() - 0.5) * size * 1.8;
+        const midY = (p1.y + p2.y) / 2 + (Math.random() - 0.5) * size * 1.8;
+        lctx.beginPath();
+        lctx.moveTo(p1.x, p1.y);
+        lctx.lineTo(midX, midY);
+        lctx.lineTo(p2.x, p2.y);
+        lctx.stroke();
+
+        lctx.strokeStyle = '#ffffff';
+        lctx.lineWidth = 1.2;
+        lctx.stroke();
+        break;
+      }
+      case 'cosmic': {
+        const rad = size * 1.6;
+        const g = lctx.createRadialGradient(p2.x, p2.y, 0, p2.x, p2.y, rad);
+        g.addColorStop(0, hexWithAlpha(col, 0.35));
+        g.addColorStop(1, hexWithAlpha(col, 0));
+        lctx.fillStyle = g;
+        lctx.beginPath();
+        lctx.arc(p2.x, p2.y, rad, 0, Math.PI * 2);
+        lctx.fill();
+
+        const specks = Math.max(2, Math.floor(density * 8));
+        for (let i = 0; i < specks; i++) {
+          const a = Math.random() * Math.PI * 2;
+          const r = Math.random() * rad;
+          lctx.fillStyle = i % 2 === 0 ? '#ffffff' : col;
+          lctx.beginPath();
+          lctx.arc(p2.x + Math.cos(a) * r, p2.y + Math.sin(a) * r, Math.random() * (partSize * 0.35), 0, Math.PI * 2);
+          lctx.fill();
+        }
+        break;
+      }
+      case 'ribbon': {
+        recentPoints.push(p2);
+        const maxHistory = Math.max(4, Math.floor(trail * 18));
+        if (recentPoints.length > maxHistory) recentPoints.shift();
+        lctx.strokeStyle = col;
+        lctx.lineWidth = 1.5;
+        for (let i = 0; i < recentPoints.length - 1; i++) {
+          lctx.globalAlpha = (i / recentPoints.length) * opacity * 0.45;
+          lctx.beginPath();
+          lctx.moveTo(recentPoints[i].x, recentPoints[i].y);
+          lctx.lineTo(p2.x, p2.y);
+          lctx.stroke();
+        }
+        break;
+      }
+    }
+    lctx.restore();
+  }
+
+  let painting = false;
+  let lastPt = null;
+
+  function getPt(e) {
+    const r = c.getBoundingClientRect();
+    return {
+      x: ((e.clientX - r.left) * w) / r.width,
+      y: ((e.clientY - r.top) * h) / r.height
+    };
   }
 
   c.onpointerdown = e => {
-    let q = point(e);
-    if (mode === 'burst') {
-      let dots = [];
-      for (let i = 0; i < 90; i++) {
-        let a = Math.random() * Math.PI * 2, r = 10 + Math.random() * 130;
-        dots.push({ x: q.x + Math.cos(a)*r, y: q.y + Math.sin(a)*r, r: 1 + Math.random() * 4, color: $('#pColor').value });
-      }
-      paths.push({ type: 'burst', dots });
-      redraw();
-      playSound('sparkle');
-      return;
-    }
-    active = { type: mode, color: $('#pColor').value, size: +$('#pSize').value, points: [q] };
-    paths.push(active);
+    e.preventDefault();
+    painting = true;
     c.setPointerCapture(e.pointerId);
-    redraw();
-    playSound('sparkle');
+    lastPt = getPt(e);
+    recentPoints = [lastPt];
+    renderLightSegment(lastPt, lastPt);
+    compositeLightScene();
   };
 
   c.onpointermove = e => {
-    if (!active) return;
-    active.points.push(point(e));
-    redraw();
-  };
-  c.onpointerup = c.onpointercancel = () => active = null;
-
-  document.querySelectorAll('[data-brush]').forEach(b => b.onclick = () => {
-    mode = b.dataset.brush;
-    document.querySelectorAll('[data-brush]').forEach(x => x.classList.toggle('selected', x === b));
-  });
-
-  $('#pTextTool').onclick = () => {
-    let txt = prompt('Enter festive message to render in glowing light art:', 'Happy Diwali');
-    if (txt) {
-      paths.push({ type: 'text', text: txt, x: w/2, y: h/2, size: 54, color: $('#pColor').value });
-      redraw();
-      playSound('chime');
-      toast('Luminous text added to canvas');
-    }
+    if (!painting) return;
+    e.preventDefault();
+    const pt = getPt(e);
+    renderLightSegment(lastPt, pt);
+    lastPt = pt;
+    compositeLightScene();
   };
 
-  $('#pUndo').onclick = () => { paths.pop(); redraw(); playSound('pop'); };
-  $('#pClear').onclick = () => { paths = []; redraw(); playSound('pop'); };
-  $('#pSave').onclick = () => saveImage(c.toDataURL('image/png'), 'Light Painting Masterpiece');
+  const endPaint = () => {
+    if (!painting) return;
+    painting = false;
+    recentPoints = [];
+    saveLayerHistory();
+  };
+  c.onpointerup = endPaint;
+  c.onpointercancel = endPaint;
+
+  $('#pEraserBtn').onclick = () => {
+    isEraser = !isEraser;
+    $('#pEraserBtn').classList.toggle('active', isEraser);
+    updateStatus();
+  };
+  $('#pUndo').onclick = () => {
+    if (history.length <= 1) return;
+    redoStack.push(history.pop());
+    restoreLayerHistory(history[history.length - 1]);
+  };
+  $('#pRedo').onclick = () => {
+    if (!redoStack.length) return;
+    const next = redoStack.pop();
+    history.push(next);
+    restoreLayerHistory(next);
+  };
+  $('#pClear').onclick = () => {
+    layers.forEach(l => l.ctx.clearRect(0, 0, w, h));
+    saveLayerHistory();
+    compositeLightScene();
+  };
+
+  $('#pSave').onclick = () => saveImage(c.toDataURL('image/png'), 'Light Painting Art');
+  $('#pDownload').onclick = () => downloadData(c.toDataURL('image/png'), 'deepavali-light-painting.png');
+
+  saveLayerHistory();
+  compositeLightScene();
 }
 
 /* ==========================================
-   4. GOLDEN HOUR (Upgraded Neighbourhood)
+   4. GOLDEN HOUR — FESTIVE ENVIRONMENT POLISH
    ========================================== */
 function buildGolden() {
   body.innerHTML = `
     <div class="golden-taskbar">
-      <strong class="golden-task" id="gTask">Festival Mission: Illuminate 4 homes & Courtyard Pookalam</strong>
+      <strong class="golden-task" id="gTask">Festival mission: Light up 3 homes</strong>
       <div class="golden-progress"><span id="gProgress"></span></div>
-      <span id="gScore">0 / 5</span>
+      <span id="gScore" style="font-weight:600;color:var(--gold2)">0 / 3</span>
     </div>
-    <div class="toolrow">
-      <button id="gNext">New Festival Mission</button>
-      <button id="timeToggle">Switch to Night</button>
-      <label>Time of Day <input id="timeSlider" type="range" min="0" max="100" value="40"></label>
+
+    <div class="toolrow" style="justify-content:space-between">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button type="button" id="gNext">✦ New festival mission</button>
+        <button type="button" id="timeToggle">Switch to night</button>
+        <label>Time of day <input id="timeSlider" type="range" min="0" max="100" value="35" style="width:130px"></label>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" id="gResetScene">↺ Reset Neighbourhood</button>
+        <button type="button" class="btn-gold" id="gSaveScene">★ Save Snapshot</button>
+      </div>
     </div>
-    <div class="stage">
+
+    <div class="stage" style="padding:14px">
       <div class="golden-scene" id="goldenScene">
-        <div class="moon"></div>
-        <span class="golden-sky-star" style="left:10%;top:15%">✦</span>
-        <span class="golden-sky-star" style="left:30%;top:8%">✧</span>
-        <span class="golden-sky-star" style="left:55%;top:18%">✦</span>
-        <span class="golden-sky-star" style="left:75%;top:10%">✧</span>
-        <span class="golden-sky-star" style="left:90%;top:22%">✦</span>
+        <div class="golden-sky-overlay" id="gSkyOverlay"></div>
+        <div class="sun-orb" id="gSun"></div>
+        <div class="moon" id="gMoon"></div>
 
-        <!-- Floating diyas on street -->
-        <div class="floating-diyas">
-          <div class="floating-diya-mini"></div><div class="floating-diya-mini"></div><div class="floating-diya-mini"></div>
-          <div class="floating-diya-mini"></div><div class="floating-diya-mini"></div><div class="floating-diya-mini"></div>
-        </div>
+        <span class="golden-sky-star" style="left:9%;top:14%">✦</span>
+        <span class="golden-sky-star" style="left:24%;top:8%;animation-delay:.6s">✧</span>
+        <span class="golden-sky-star" style="left:41%;top:16%;animation-delay:1.2s">✦</span>
+        <span class="golden-sky-star" style="left:58%;top:10%;animation-delay:.4s">✧</span>
+        <span class="golden-sky-star" style="left:74%;top:18%;animation-delay:1.6s">✦</span>
+        <span class="golden-sky-star" style="left:88%;top:11%;animation-delay:.9s">✧</span>
 
-        <!-- Courtyard Pookalam -->
-        <div class="courtyard-pookalam" id="pookalamCourtyard" title="Interactive Courtyard Pookalam"></div>
+        <div class="distant-skyline"></div>
+
+        <div class="golden-decor" data-decor="lantern" style="left:11%;top:36%" title="Click to inspect lantern">🏮</div>
+        <div class="golden-decor" data-decor="rangoli" style="right:12%;bottom:13%;font-size:34px;color:#ff9ebb" title="Click to inspect rangoli">✺</div>
 
         <div class="houses">
-          ${Array.from({length: 5}, (_, i) => `
-            <div class="house" data-house="${i}">
+          ${Array.from({ length: 6 }, (_, i) => `
+            <div class="house" data-house="${i}" title="Click to illuminate home ${i + 1}">
               <div class="roof"></div>
-              <div class="window"></div>
-              <div class="house-door"></div>
+              <div class="house-garland"></div>
+              <div class="house-balcony"></div>
+              <div class="window-row">
+                <div class="window"></div>
+                <div class="window"></div>
+              </div>
+              <div class="house-door"><span class="door-knob"></span></div>
             </div>
           `).join('')}
         </div>
+
+        <div class="courtyard-glow"></div>
         <div class="street"></div>
       </div>
     </div>
+
     <div class="golden-actions">
-      <button id="gLantern">Hang Fairy Lights / Lantern</button>
-      <button id="gMelaStall">Decorate Mela Stall</button>
-      <button id="gDiyas">Light Street Diyas</button>
-      <button id="gFireflies">Release Fireflies</button>
+      <button type="button" class="btn" id="gLantern">🏮 Hang a lantern</button>
+      <button type="button" class="btn" id="gGarland">🌼 Add marigold garlands</button>
+      <button type="button" class="btn" id="gRangoli">✺ Make a rangoli</button>
+      <button type="button" class="btn" id="gDiyas">🪔 Light street diyas</button>
+      <button type="button" class="btn" id="gBalcony">✨ Decorate balconies</button>
+      <button type="button" class="btn" id="gFireflies">✧ Release fireflies</button>
     </div>
-    <div class="hint" id="gHint">Click house windows to illuminate them. Click the courtyard Pookalam to add flowers. Complete missions to bring the neighbourhood to life.</div>`;
+
+    <div class="hint" id="gHint">Complete festival missions to transform the neighbourhood. Click house windows, hang marigold garlands, and light the street.</div>
+  `;
 
   const scene = $('#goldenScene');
-  let mission = 0, lit = new Set(), progress = 0;
+  let mission = 0;
+  let progress = 0;
+  const lit = new Set();
+  const decorDone = new Set();
 
   const missions = [
-    { text: 'Festival Mission: Illuminate 4 homes & Pookalam', goal: 5, kind: 'general' },
-    { text: 'Festival Mission: Hang 2 decorative lanterns', goal: 2, kind: 'lantern' },
-    { text: 'Festival Mission: Light 8 street diyas', goal: 8, kind: 'diya' },
-    { text: 'Festival Mission: Release firefly swarm', goal: 1, kind: 'firefly' }
+    { text: 'Festival mission: Light up 3 homes', goal: 3, kind: 'house' },
+    { text: 'Festival mission: Hang 2 lanterns', goal: 2, kind: 'lantern' },
+    { text: 'Festival mission: Create 1 rangoli', goal: 1, kind: 'rangoli' },
+    { text: 'Festival mission: Light 5 street diyas', goal: 5, kind: 'diya' },
+    { text: 'Festival mission: Release fireflies', goal: 1, kind: 'firefly' }
   ];
 
-  function updateMission() {
-    let m = missions[mission];
-    $('#gTask').textContent = m.text;
-    $('#gScore').textContent = progress + ' / ' + m.goal;
-    $('#gProgress').style.width = (progress / m.goal * 100) + '%';
-    if (progress >= m.goal) {
-      $('#gHint').textContent = 'Mission complete! The neighbourhood glows with festive cheer.';
-      toast('Mission complete!');
+  function spawnSparkBurst(xPct, yPct) {
+    for (let i = 0; i < 10; i++) {
+      const sp = document.createElement('span');
+      sp.className = 'spark-burst';
+      const angle = (i * Math.PI * 2) / 10;
+      const dist = 22 + Math.random() * 24;
+      sp.style.left = xPct + '%';
+      sp.style.top = yPct + '%';
+      sp.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+      sp.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+      scene.appendChild(sp);
+      setTimeout(() => sp.remove(), 700);
     }
   }
 
-  function advance(kind, amt = 1) {
-    progress = Math.min(missions[mission].goal, progress + amt);
-    updateMission();
+  function update() {
+    const m = missions[mission];
+    $('#gTask').textContent = m.text;
+    $('#gScore').textContent = `${progress} / ${m.goal}`;
+    $('#gProgress').style.width = (progress / m.goal * 100) + '%';
+    if (progress >= m.goal) {
+      $('#gHint').textContent = 'Mission complete! The neighbourhood glows with festive spirit. Click "New festival mission" to continue.';
+      toast('Mission complete! ✦');
+    }
+  }
+
+  function advance(kind, amount = 1) {
+    const m = missions[mission];
+    if (m.kind !== kind || progress >= m.goal) return;
+    progress = Math.min(m.goal, progress + amount);
+    update();
   }
 
   scene.querySelectorAll('.house').forEach((h, i) => {
-    let win = h.querySelector('.window');
-    win.onclick = e => {
-      e.stopPropagation();
+    h.onclick = e => {
       h.classList.toggle('lit');
+      const rect = scene.getBoundingClientRect();
+      const hRect = h.getBoundingClientRect();
+      const xPct = ((hRect.left + hRect.width / 2 - rect.left) / rect.width) * 100;
+      const yPct = ((hRect.top + hRect.height / 2 - rect.top) / rect.height) * 100;
+
       if (h.classList.contains('lit')) {
-        if (!lit.has(i)) { lit.add(i); advance('general'); playSound('chime'); }
+        spawnSparkBurst(xPct, yPct);
+        if (!lit.has(i)) {
+          lit.add(i);
+          advance('house');
+        }
       } else {
         lit.delete(i);
       }
     };
   });
 
-  $('#pookalamCourtyard').onclick = () => {
-    toast('Added marigold and rose petals to Pookalam courtyard!');
-    advance('general');
-    playSound('sparkle');
-  };
-
   function setTime(v) {
-    let night = v > 55;
-    scene.classList.toggle('night', night);
-    scene.style.filter = `brightness(${0.78 + v/300}) saturate(${0.9 + v/170})`;
-    $('#timeToggle').textContent = night ? 'Switch to Evening' : 'Switch to Night';
-    scene.querySelector('.moon').style.opacity = Math.max(0, (v - 25) / 70);
+    const nightRatio = clamp(v / 100, 0, 1);
+    const isNight = v > 55;
+    scene.classList.toggle('night', isNight);
+    $('#gSkyOverlay').style.opacity = nightRatio;
+
+    const sun = $('#gSun');
+    const moon = $('#gMoon');
+    sun.style.opacity = Math.max(0, 1 - nightRatio * 1.4);
+    sun.style.transform = `translateY(${nightRatio * 120}px)`;
+
+    moon.style.opacity = clamp((v - 20) / 65, 0, 1);
+    moon.style.transform = `translateY(${(1 - nightRatio) * 55}px)`;
+
+    $('#timeToggle').textContent = isNight ? 'Switch to evening' : 'Switch to night';
   }
 
   $('#timeSlider').oninput = e => setTime(+e.target.value);
   $('#timeToggle').onclick = () => {
-    $('#timeSlider').value = $('#timeSlider').value > 55 ? 30 : 85;
+    $('#timeSlider').value = +$('#timeSlider').value > 55 ? 25 : 88;
     setTime(+$('#timeSlider').value);
   };
 
   $('#gNext').onclick = () => {
     mission = (mission + 1) % missions.length;
     progress = 0;
-    updateMission();
-    toast('New festival mission loaded');
+    update();
+    $('#gHint').textContent = 'New mission unlocked. Explore the neighbourhood and add festive decorations.';
   };
 
   $('#gLantern').onclick = () => {
-    let el = document.createElement('span');
+    const n = scene.querySelectorAll('[data-extra="lantern"]').length;
+    const el = document.createElement('span');
     el.className = 'golden-decor';
+    el.dataset.extra = 'lantern';
     el.textContent = '🏮';
-    el.style.left = (15 + Math.random() * 70) + '%';
-    el.style.top = (25 + Math.random() * 15) + '%';
-    scene.append(el);
+    const lx = 16 + (n * 11) % 72;
+    const ly = 22 + (n % 3) * 7;
+    el.style.left = lx + '%';
+    el.style.top = ly + '%';
+    scene.appendChild(el);
+    spawnSparkBurst(lx, ly);
     advance('lantern');
-    playSound('chime');
+    $('#gHint').textContent = 'A warm festive lantern now sways above the street.';
   };
 
-  $('#gMelaStall').onclick = () => {
-    toast('Mela stall decorated with jalebis and ladoos!');
-    playSound('chime');
+  $('#gGarland').onclick = () => {
+    scene.querySelectorAll('.house').forEach(h => h.classList.add('garland-on'));
+    const n = scene.querySelectorAll('[data-extra="garland"]').length;
+    const el = document.createElement('span');
+    el.className = 'golden-decor';
+    el.dataset.extra = 'garland';
+    el.textContent = '🌼〰🌼〰🌼';
+    el.style.fontSize = '16px';
+    const gx = 18 + (n * 18) % 64;
+    el.style.left = gx + '%';
+    el.style.top = '32%';
+    scene.appendChild(el);
+    spawnSparkBurst(gx, 32);
+    $('#gHint').textContent = 'Fresh marigold torans and garlands adorn the neighbourhood.';
+  };
+
+  $('#gRangoli').onclick = () => {
+    const el = document.createElement('span');
+    el.className = 'golden-decor';
+    el.dataset.extra = 'rangoli';
+    const symbols = ['✺', '❁', '☸', '❖'];
+    const cols = ['#ff91c8', '#ffd166', '#4cc9f0', '#06d6a0', '#ff7b00'];
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    const rx = 14 + Math.random() * 72;
+    const ry = 82 + Math.random() * 10;
+    el.style.left = rx + '%';
+    el.style.top = ry + '%';
+    el.style.color = cols[Math.floor(Math.random() * cols.length)];
+    el.style.fontSize = (32 + Math.random() * 14) + 'px';
+    scene.appendChild(el);
+    spawnSparkBurst(rx, ry);
+    advance('rangoli');
+    $('#gHint').textContent = 'A vibrant courtyard rangoli welcomes guests at the entrance.';
   };
 
   $('#gDiyas').onclick = () => {
-    for (let i = 0; i < 4; i++) {
-      let el = document.createElement('span');
+    for (let i = 0; i < 5; i++) {
+      const el = document.createElement('span');
       el.className = 'golden-decor';
+      el.dataset.extra = 'diya';
       el.textContent = '🪔';
-      el.style.left = (10 + i * 22) + '%';
-      el.style.bottom = '12%';
-      el.style.fontSize = '22px';
-      scene.append(el);
+      const dx = 10 + i * 18 + Math.random() * 6;
+      el.style.left = dx + '%';
+      el.style.bottom = (6 + (i % 2) * 5) + '%';
+      el.style.fontSize = '21px';
+      scene.appendChild(el);
     }
-    advance('diya', 4);
-    playSound('sparkle');
+    spawnSparkBurst(50, 86);
+    advance('diya', 5);
+    $('#gHint').textContent = 'Glowing clay diyas now illuminate the courtyard and street.';
+  };
+
+  $('#gBalcony').onclick = () => {
+    scene.querySelectorAll('.house').forEach((h, idx) => {
+      const rect = scene.getBoundingClientRect();
+      const hRect = h.getBoundingClientRect();
+      const bx = ((hRect.left + hRect.width * 0.5 - rect.left) / rect.width) * 100;
+      const by = ((hRect.top + hRect.height * 0.25 - rect.top) / rect.height) * 100;
+      const el = document.createElement('span');
+      el.className = 'golden-decor';
+      el.dataset.extra = 'balcony';
+      el.textContent = '🕯';
+      el.style.fontSize = '15px';
+      el.style.left = bx + '%';
+      el.style.top = by + '%';
+      scene.appendChild(el);
+    });
+    $('#gHint').textContent = 'Balcony fairy lights and candles shimmer across every home.';
   };
 
   $('#gFireflies').onclick = () => {
-    for (let i = 0; i < 28; i++) {
-      let el = document.createElement('div');
-      el.className = 'firefly';
-      el.style.left = Math.random() * 95 + '%';
-      el.style.top = (20 + Math.random() * 60) + '%';
-      scene.append(el);
+    for (let i = 0; i < 20; i++) {
+      const el = document.createElement('span');
+      el.className = 'firefly-particle';
+      el.dataset.extra = 'firefly';
+      el.style.left = (6 + Math.random() * 88) + '%';
+      el.style.top = (14 + Math.random() * 68) + '%';
+      el.style.animationDelay = (Math.random() * 3) + 's';
+      scene.appendChild(el);
     }
     advance('firefly');
-    playSound('sparkle');
+    $('#gHint').textContent = 'A warm cloud of fireflies drifts gently across the festive night.';
   };
 
-  setTime(40);
-  updateMission();
+  $('#gResetScene').onclick = () => {
+    scene.querySelectorAll('[data-extra]').forEach(el => el.remove());
+    scene.querySelectorAll('.house').forEach(h => h.classList.remove('lit', 'garland-on'));
+    lit.clear();
+    progress = 0;
+    update();
+    $('#gHint').textContent = 'Neighbourhood reset. Begin decorating again!';
+  };
+
+  $('#gSaveScene').onclick = () => {
+    const c = document.createElement('canvas');
+    c.width = 960;
+    c.height = 520;
+    const x = c.getContext('2d');
+    const v = +$('#timeSlider').value;
+    const g = x.createLinearGradient(0, 0, 0, 520);
+    if (v > 55) {
+      g.addColorStop(0, '#050b1e');
+      g.addColorStop(0.6, '#181e42');
+      g.addColorStop(1, '#2b1b32');
+    } else {
+      g.addColorStop(0, '#e89565');
+      g.addColorStop(0.5, '#8e5470');
+      g.addColorStop(1, '#1e2646');
+    }
+    x.fillStyle = g;
+    x.fillRect(0, 0, 960, 520);
+
+    // Moon
+    x.fillStyle = '#ffe9b3';
+    x.shadowColor = '#ffdda0';
+    x.shadowBlur = 35;
+    x.beginPath();
+    x.arc(810, 85, 28, 0, Math.PI * 2);
+    x.fill();
+    x.shadowBlur = 0;
+
+    // Street
+    x.fillStyle = '#1b1726';
+    x.fillRect(0, 415, 960, 105);
+
+    // Houses
+    const heights = [205, 255, 220, 265, 215, 240];
+    scene.querySelectorAll('.house').forEach((h, idx) => {
+      const hx = 52 + idx * 148;
+      const hh = heights[idx];
+      const hy = 415 - hh;
+      x.fillStyle = '#8b4a39';
+      x.strokeStyle = '#df9d58';
+      x.lineWidth = 2;
+      x.fillRect(hx, hy, 112, hh);
+      x.strokeRect(hx, hy, 112, hh);
+
+      const isLit = h.classList.contains('lit');
+      x.fillStyle = isLit ? '#ffd879' : '#232a42';
+      if (isLit) { x.shadowColor = '#ffc65e'; x.shadowBlur = 22; }
+      x.fillRect(hx + 18, hy + hh * 0.36, 32, hh * 0.24);
+      x.fillRect(hx + 62, hy + hh * 0.36, 32, hh * 0.24);
+      x.shadowBlur = 0;
+    });
+
+    saveImage(c.toDataURL('image/png'), 'Golden Hour Neighbourhood');
+  };
+
+  scene.querySelectorAll('[data-decor]').forEach(el => {
+    el.onclick = () => {
+      const k = el.dataset.decor;
+      if (!decorDone.has(k)) {
+        decorDone.add(k);
+        toast(k === 'lantern' ? 'Lantern discovered!' : 'Rangoli discovered!');
+      }
+    };
+  });
+
+  setTime(35);
+  update();
 }
 
 /* ==========================================
-   5. NEW EXPERIENCE: FIREWORK PLAYGROUND
+   SYNTHESIZED AMBIENT FESTIVAL SOUNDTRACK
    ========================================== */
-function buildFireworks() {
-  body.innerHTML = `
-    <div class="toolrow">
-      <button class="selected" data-fw="fuljhadi">✨ Fuljhadi Cursor</button>
-      <button data-fw="chakri">🎡 Chakri</button>
-      <button data-fw="anaar">⛲ Anaar Fountain</button>
-      <button data-fw="bomb">🎆 Festival Bomb</button>
-      <button data-fw="galaxy">🌌 Galaxy Spiral</button>
-      <button data-fw="phoenix">🔥 Phoenix Burst</button>
-      <button id="fwClear">Clear Sky</button>
-      <button id="fwSave">Save Snapshot</button>
-    </div>
-    <div class="stage">
-      <div class="canvas-wrap square"><canvas id="fwCanvas"></canvas></div>
-    </div>
-    <div class="hint">Move your mouse or touch the canvas for golden sparkler trails. Click anywhere to trigger fireworks or out-of-this-world celestial bursts.</div>`;
+function toggleSound() {
+  soundOn = !soundOn;
+  const btn = $('#soundBtn');
+  if (soundOn) {
+    try {
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
 
-  const c = $('#fwCanvas'), ctx = c.getContext('2d');
-  let w = 620, h = 620, dpr = Math.min(devicePixelRatio || 1, 2);
-  c.width = w * dpr; c.height = h * dpr;
-  ctx.scale(dpr, dpr);
+      const master = audioCtx.createGain();
+      master.gain.value = 0.04;
+      master.connect(audioCtx.destination);
 
-  let particles = [], currentType = 'fuljhadi';
-  let cursorX = w / 2, cursorY = h / 2, pointerActive = false;
+      // Warm tanpura-inspired fifth chord (Sa - Pa - Sa)
+      [146.83, 220.0, 293.66].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.type = i === 1 ? 'triangle' : 'sine';
+        osc.frequency.value = freq;
+        g.gain.value = 0.25 / (i + 1);
+        osc.connect(g);
+        g.connect(master);
+        osc.start();
+        ambientNodes.push(osc);
+      });
 
-  class Particle {
-    constructor(x, y, vx, vy, color, size, life, decay, type) {
-      this.x = x; this.y = y; this.vx = vx; this.vy = vy;
-      this.color = color; this.size = size; this.life = life; this.maxLife = life; this.decay = decay;
-      this.type = type;
+      btn.textContent = '♫ Sound: On';
+      btn.classList.add('playing');
+      toast('Peaceful ambient drone enabled');
+    } catch (e) {
+      soundOn = false;
+      btn.textContent = '♫ Sound: Off';
+      btn.classList.remove('playing');
+      toast('Audio is unavailable in this browser.');
     }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      this.vy += 0.08; // gravity
-      this.vx *= 0.96; this.vy *= 0.96;
-      this.life -= this.decay;
-    }
-    draw() {
-      ctx.save();
-      ctx.globalAlpha = Math.max(0, this.life / this.maxLife);
-      ctx.fillStyle = this.color;
-      ctx.shadowColor = this.color; ctx.shadowBlur = 12;
-      ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
-      ctx.restore();
-    }
+  } else {
+    ambientNodes.forEach(n => { try { n.stop(); n.disconnect(); } catch (e) {} });
+    ambientNodes = [];
+    btn.textContent = '♫ Sound: Off';
+    btn.classList.remove('playing');
   }
-
-  function launchFirework(x, y, type) {
-    playSound('pop');
-    let colors = ['#f5c96b', '#ff4f81', '#49b8c6', '#7950f2', '#43e6a2', '#ff7a59', '#fff'];
-
-    if (type === 'fuljhadi') {
-      for (let i = 0; i < 40; i++) {
-        let a = Math.random() * Math.PI * 2, spd = Math.random() * 5;
-        particles.push(new Particle(x, y, Math.cos(a)*spd, Math.sin(a)*spd, '#ffdf6d', 2 + Math.random()*2, 40, 0.03, 'spark'));
-      }
-    } else if (type === 'chakri') {
-      for (let i = 0; i < 70; i++) {
-        let a = i * (Math.PI * 2 / 70), spd = 3 + Math.random() * 4;
-        let col = colors[i % colors.length];
-        particles.push(new Particle(x, y, Math.cos(a)*spd, Math.sin(a)*spd, col, 2.5, 60, 0.02, 'chakri'));
-      }
-    } else if (type === 'anaar') {
-      for (let i = 0; i < 80; i++) {
-        let a = -Math.PI/2 + (Math.random() - 0.5) * 1.2, spd = 4 + Math.random() * 8;
-        particles.push(new Particle(x, y, Math.cos(a)*spd, Math.sin(a)*spd, '#ffb347', 2 + Math.random()*3, 50, 0.025, 'anaar'));
-      }
-    } else if (type === 'galaxy') {
-      for (let i = 0; i < 120; i++) {
-        let a = i * 0.2, r = i * 0.8;
-        let vx = Math.cos(a) * (r * 0.05), vy = Math.sin(a) * (r * 0.05);
-        let col = i % 2 === 0 ? '#b58af2' : '#35d6ff';
-        particles.push(new Particle(x, y, vx, vy, col, 2, 90, 0.015, 'galaxy'));
-      }
-    } else if (type === 'phoenix') {
-      for (let i = 0; i < 90; i++) {
-        let a = Math.random() * Math.PI - Math.PI/2, spd = 2 + Math.random() * 7;
-        let col = Math.random() > 0.5 ? '#ff4f81' : '#ff9900';
-        particles.push(new Particle(x, y, Math.cos(a)*spd, Math.sin(a)*spd - 2, col, 2.5, 70, 0.02, 'phoenix'));
-      }
-    } else {
-      // Standard Bomb
-      for (let i = 0; i < 100; i++) {
-        let a = Math.random() * Math.PI * 2, spd = 1 + Math.random() * 7;
-        let col = colors[Math.floor(Math.random() * colors.length)];
-        particles.push(new Particle(x, y, Math.cos(a)*spd, Math.sin(a)*spd, col, 2 + Math.random()*2.5, 65, 0.02, 'bomb'));
-      }
-    }
-  }
-
-  c.onpointerdown = e => {
-    let r = c.getBoundingClientRect();
-    let x = (e.clientX - r.left) * w / r.width;
-    let y = (e.clientY - r.top) * h / r.height;
-    launchFirework(x, y, currentType);
-    c.setPointerCapture(e.pointerId);
-  };
-
-  c.onpointermove = e => {
-    let r = c.getBoundingClientRect();
-    cursorX = (e.clientX - r.left) * w / r.width;
-    cursorY = (e.clientY - r.top) * h / r.height;
-    pointerActive = true;
-  };
-  c.onpointerleave = () => pointerActive = false;
-
-  document.querySelectorAll('[data-fw]').forEach(b => b.onclick = () => {
-    currentType = b.dataset.fw;
-    document.querySelectorAll('[data-fw]').forEach(x => x.classList.toggle('selected', x === b));
-    toast('Selected firework: ' + b.textContent);
-  });
-
-  $('#fwClear').onclick = () => { particles = []; playSound('pop'); };
-  $('#fwSave').onclick = () => saveImage(c.toDataURL('image/png'), 'Firework Playground Night Sky');
-
-  function animate() {
-    ctx.fillStyle = 'rgba(9, 11, 25, 0.22)';
-    ctx.fillRect(0, 0, w, h);
-
-    // Fuljhadi cursor emitter
-    if (pointerActive && currentType === 'fuljhadi') {
-      for(let i=0; i<3; i++) {
-        let a = Math.random() * Math.PI * 2, spd = Math.random() * 3;
-        particles.push(new Particle(cursorX, cursorY, Math.cos(a)*spd, Math.sin(a)*spd, '#ffdf6d', 2, 30, 0.04, 'spark'));
-      }
-    }
-
-    for (let i = particles.length - 1; i >= 0; i--) {
-      particles[i].update();
-      particles[i].draw();
-      if (particles[i].life <= 0) particles.splice(i, 1);
-    }
-
-    requestAnimationFrame(animate);
-  }
-  animate();
 }
+$('#soundBtn').onclick = toggleSound;
 
+// Initialize Gallery on page load
 renderGallery();
 </script>
 </body>
